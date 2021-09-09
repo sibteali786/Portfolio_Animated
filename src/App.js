@@ -18,7 +18,7 @@ function App() {
           <ClockLoader color={"#FFFAFB"} loading={loading} size={150} />
         </div>
       ) : (
-        <div className={styles.App} style={{ color: "#FFFAFB" }}>
+        <div className={styles.App_1} style={{ color: "#FFFAFB" }}>
           <Router>
             <div>
               <Link to="/" className={styles.hel}>
