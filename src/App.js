@@ -1,26 +1,22 @@
 import "./App.css";
 import useWebAnimations from "@wellyshen/use-web-animations";
-import { useRef, useEffect } from "react";
 
 function App() {
-  // const inputEl = useRef(null);
-  const { ref, playState, getAnimation } = useWebAnimations({
+  const { ref, getAnimation } = useWebAnimations({
     keyframes: [
-      { transform: "translateX(0px)" },
-      { transform: "translateX(600px)" },
+      { transform: "translateX(-100%)", opacity: 0 },
+      { transform: "translateX(0%)", opacity: 1 },
     ],
-    timing: {
-      duration: 3000,
+    animationOptions: {
+      duration: 1000,
+      iterations: 1,
+      easing: "ease-in",
+      fill: "forwards",
     },
   });
-  useEffect(() => {
-    inputEl.current.focus();
-  }, []);
   return (
     <div className="App">
-      {/* <h1>Hello World </h1>
-      <input ref={inputEl} type="text" /> */}
-      <div ref={ref}>Hello World</div>
+      <h1 ref={ref}>Hello World</h1>
     </div>
   );
 }
