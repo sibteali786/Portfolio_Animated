@@ -1,7 +1,7 @@
 import React from "react";
-import "./style.css";
+import styles from "./style.module.css";
 export default SibtealiBaqar;
 
 function SibtealiBaqar() {
-  return <div>Sibteali Baqar Page</div>;
+  return <div className={styles.font}>Sibteali Baqar Page</div>;
 }
