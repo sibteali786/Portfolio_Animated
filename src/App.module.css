@@ -8,6 +8,7 @@
   height: 100vh;
   width: 100%;
   font-family: "Alumni Sans";
+  font-size: 1.4rem;
 }
 
 .App_1 {
@@ -15,9 +16,25 @@
   background-color: #131515;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 100vh;
   width: 100%;
   font-family: "Alumni Sans";
+  font-size: 1.4rem;
+}
+.hel {
+  text-decoration: none;
+  color: #fffafb;
+  padding: 0 0.8rem;
+  letter-spacing: 0.3rem;
+}
+
+.hel:after {
+  content: "";
+  position: absolute;
+  background-color: #ee9b00;
+  height: 3px;
+  width: 100%;
+  left: 0;
 }

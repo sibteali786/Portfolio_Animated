@@ -1,19 +1,9 @@
 import styles from "./App.module.css";
-import useWebAnimations, { bounce } from "@wellyshen/use-web-animations";
 import ClockLoader from "react-spinners/ClockLoader";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { SibtealiBaqar, Contact, Projects, About } from "./components";
 function App() {
-  const { keyframes, animationOptions } = bounce;
-  const { ref } = useWebAnimations({
-    keyframes,
-    animationOptions: {
-      ...animationOptions,
-      delay: 3000, // Delay 5s
-      duration: 1000,
-    },
-  });
   const [loading, setloading] = useState(false);
   useEffect(() => {
     setloading(true);
@@ -22,19 +12,33 @@ function App() {
     }, 2000);
   }, []);
   return (
-    <div className={styles.App}>
+    <div>
       {loading ? (
-        <ClockLoader color={"#FFFAFB"} loading={loading} size={150} />
+        <div className={styles.App}>
+          <ClockLoader color={"#FFFAFB"} loading={loading} size={150} />
+        </div>
       ) : (
-        <div className={styles.App_1} style={{ color: "#FFFAFB" }}>
+        <div className={styles.App} style={{ color: "#FFFAFB" }}>
           <Router>
-            <Link to="/">Sibteali Baqar</Link>
-            <Link to="projects">Projects</Link>
-            <Link to="about">About</Link>
+            <div>
+              <Link to="/" className={styles.hel}>
+                SibtealiBaqar
+              </Link>
+              <Link to="projects" className={styles.hel}>
+                Projects
+              </Link>
+              <Link to="about" className={styles.hel}>
+                About
+              </Link>
+              <Link to="contact" className={styles.hel}>
+                Contact
+              </Link>
+            </div>
             <Routes>
               <Route path="/" element={<SibtealiBaqar />} />
               <Route path="about" element={<About />} />
               <Route path="projects" element={<Projects />} />
+              <Route path="contact" element={<Contact />} />
             </Routes>
           </Router>
         </div>

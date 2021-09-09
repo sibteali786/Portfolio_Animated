@@ -3,5 +3,5 @@ import styles from "./style.module.css";
 export default Contact;
 
 function Contact() {
-  return <div>Home Page</div>;
+  return <div>Contact Page</div>;
 }
