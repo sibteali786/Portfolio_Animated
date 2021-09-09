@@ -1,24 +1,33 @@
 import "./App.css";
-import useWebAnimations, { backInLeft } from "@wellyshen/use-web-animations";
-import RiseLoader from "react-spinners/RiseLoader";
+import useWebAnimations, { bounce } from "@wellyshen/use-web-animations";
+import ClockLoader from "react-spinners/ClockLoader";
 import { useState, useEffect } from "react";
-
+import SibtealiBaqar from "./components/SibtealiBaqar/SibtealiBaqar";
 function App() {
-  const { ref } = useWebAnimations({ ...backInLeft });
+  const { keyframes, animationOptions } = bounce;
+  const { ref } = useWebAnimations({
+    keyframes,
+    animationOptions: {
+      ...animationOptions,
+      delay: 3000, // Delay 5s
+      duration: 1000,
+    },
+  });
   const [loading, setloading] = useState(false);
   useEffect(() => {
     setloading(true);
     setTimeout(() => {
       setloading(false);
-    }, 5000);
+    }, 2000);
   }, []);
   return (
     <div className="App">
       {loading ? (
-        <RiseLoader color={"#BD10E0"} loading={loading} size={20} />
+        <ClockLoader color={"#FFFAFB"} loading={loading} size={150} />
       ) : (
-        <div className="App">
+        <div className="App_1" style={{ color: "#FFFAFB" }}>
           <h1 ref={ref}>Hello World</h1>
+          <SibtealiBaqar></SibtealiBaqar>
         </div>
       )}
     </div>
