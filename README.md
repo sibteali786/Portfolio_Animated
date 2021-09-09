@@ -1,3 +1,10 @@
+<h1> Motivation </h1>
+<p> The purpose is to make a Portfolio to showcase Projects and Achievments </p>
+
+<h2> Libraries Used </h2>
+<strong>React Spinners</strong>
+<strong>React TypeWriter</strong>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
