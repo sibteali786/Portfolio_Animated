@@ -1,37 +1,26 @@
 import "./App.css";
-import useWebAnimations from "@wellyshen/use-web-animations";
+import useWebAnimations, { backInLeft } from "@wellyshen/use-web-animations";
+import RiseLoader from "react-spinners/RiseLoader";
+import { useState, useEffect } from "react";
 
 function App() {
-  const { ref, playState, getAnimation } = useWebAnimations({
-    keyframes: [
-      { transform: "translateX(-100%)", opacity: 0 },
-      { transform: "translateX(0%)", opacity: 1 },
-    ],
-    animationOptions: {
-      duration: 1000,
-      iterations: 1,
-      easing: "ease-in",
-      fill: "forwards",
-    },
-  });
+  const { ref } = useWebAnimations({ ...backInLeft });
+  const [loading, setloading] = useState(false);
+  useEffect(() => {
+    setloading(true);
+    setTimeout(() => {
+      setloading(false);
+    }, 5000);
+  }, []);
   return (
     <div className="App">
-      <p>Animation Running {playState} </p>
-      <h1 ref={ref}>Hello World</h1>
-      <button
-        onClick={() => {
-          getAnimation().play();
-        }}
-      >
-        Play
-      </button>
-      <button
-        onClick={() => {
-          getAnimation().pause();
-        }}
-      >
-        Pause
-      </button>
+      {loading ? (
+        <RiseLoader color={"#BD10E0"} loading={loading} size={20} />
+      ) : (
+        <div className="App">
+          <h1 ref={ref}>Hello World</h1>
+        </div>
+      )}
     </div>
   );
 }
