@@ -8,7 +8,7 @@ function SibtealiBaqar() {
   const { ref } = useWebAnimations({ ...fadeIn });
   return (
     <div ref={ref} className={styles.font}>
-      Sibteali Baqar Page
+      Sibteali Baqar
     </div>
   );
 }

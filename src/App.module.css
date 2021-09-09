@@ -1,4 +1,9 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
   text-align: center;
   background-color: #131515;
   display: flex;
@@ -7,24 +12,24 @@
   align-items: center;
   height: 100vh;
   width: 100%;
-  font-family: "Alumni Sans";
-  font-size: 1.4rem;
-}
-
-.App_1 {
-  text-align: center;
-  background-color: #131515;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 90vw;
   margin: 0 auto;
   font-family: "Alumni Sans";
   font-size: 1.4rem;
 }
-a {
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 2rem;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0px 15px 40px 0px rgb(255 140 0 / 81%),
+    0px 0px 10px -20px rgb(255 140 0 / 38%) inset;
+}
+.hel a {
   position: relative;
   text-decoration: none;
   color: #fffafb;
@@ -32,17 +37,17 @@ a {
   letter-spacing: 0.3rem;
 }
 
-a:after {
+.hel a:after {
   content: "";
   position: absolute;
   background-color: #ee9b00;
   height: 3px;
-  width: 50%;
-  left: 0;
+  width: 0;
+  left: 15%;
   bottom: -5px;
   transition: 0.5s;
 }
 
-a:hover:after {
-  width: 98%;
+.hel a:hover:after {
+  width: 65%;
 }
