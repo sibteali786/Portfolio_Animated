@@ -13,10 +13,11 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100%;
+  width: calc(100vw - 1em);
   margin: 0 auto;
   font-family: "Alumni Sans";
   font-size: 1.4rem;
+  color: #fffafb;
 }
 nav {
   display: flex;
