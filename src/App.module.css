@@ -35,21 +35,35 @@ nav {
   position: relative;
   text-decoration: none;
   color: #fffafb;
-  padding: 0 0.8rem;
+  margin: 0 0.8rem;
+  padding: 0;
   letter-spacing: 0.3rem;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
 }
 
-.hel a:after {
+.hel a:after,
+.hel a:before {
   content: "";
   position: absolute;
   background-color: #ee9b00;
   height: 3px;
-  width: 0;
-  left: 15%;
+  width: 0px;
   bottom: -5px;
-  transition: 0.5s;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  transition-duration: 0.5s;
 }
 
-.hel a:hover:after {
-  width: 65%;
+.hel a:before {
+  left: 50%;
+}
+.hel a:after {
+  right: 50%;
+}
+
+.hel a:hover:after,
+a:hover:before {
+  width: 50%;
+  opacity: 1;
 }
