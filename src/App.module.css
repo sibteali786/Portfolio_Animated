@@ -3,9 +3,11 @@
   padding: 0;
 }
 
+body {
+  background-color: #131515;
+}
 .container {
   text-align: center;
-  background-color: #131515;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,14 +22,13 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: transparent;
   padding: 0.7rem 2rem;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
   right: 0;
-  box-shadow: 0px 15px 40px 0px rgb(255 140 0 / 81%),
-    0px 0px 10px -20px rgb(255 140 0 / 38%) inset;
 }
 .hel a {
   position: relative;
