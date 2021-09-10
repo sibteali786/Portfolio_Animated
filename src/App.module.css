@@ -4,9 +4,18 @@
 }
 
 body {
-  background-color: #131515;
+  background: #000000;
 }
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: calc(100vw - 1em);
+  margin: 0 auto;
+}
+.container_1 {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -16,8 +25,15 @@ body {
   width: calc(100vw - 1em);
   margin: 0 auto;
   font-family: "Alumni Sans";
-  font-size: 1.4rem;
   color: #fffafb;
+  background-image: url(./confetti-doodles.svg);
+  height: 100vh;
+  width: 100vw;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
 }
 nav {
   display: flex;
@@ -66,4 +82,9 @@ nav {
 a:hover:before {
   width: 50%;
   opacity: 1;
+}
+
+/* Title */
+.Title {
+  font-size: calc(2vw + 1rem);
 }

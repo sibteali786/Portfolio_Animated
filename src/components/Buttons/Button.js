@@ -35,13 +35,13 @@ const Button = ({
     border: `1px solid ${btnColor}`,
     backgroundColor: "transparent",
     color: labelColor || "white",
-    borderRadius: "25px",
+    borderRadius: "30px",
   };
   const roundedHoverStyle = {
     border: `1px solid ${btnColor}`,
     backgroundColor: btnColor,
     color: labelColor || "white",
-    borderRadius: "25px",
+    borderRadius: "30px",
   };
   const disabledStyle = {
     cursor: "default",

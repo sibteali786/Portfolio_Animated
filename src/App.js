@@ -21,30 +21,37 @@ function App() {
           <ClockLoader color={"#ee9b00"} loading={loading} size={150} />
         </div>
       ) : (
-        <div className={styles.container}>
+        <div className={styles.container_1}>
           <Router>
             <nav className={styles.navBar}>
               <Link to="/" style={{ textDecoration: "none" }}>
-                <h1
+                <div
                   style={{
                     letterSpacing: "0.3rem",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    fontSize: "3rem",
+                    fontSize: "calc(5vw+1rem)",
                     color: "#fffafb",
                   }}
                 >
-                  <ReactLogo style={{ marginRight: "0.8rem" }} />
-                  ibteali Baqar
-                </h1>
+                  <ReactLogo
+                    style={{
+                      marginRight: "0.8rem",
+                    }}
+                  />
+                  <p className={styles.Title}>ibteali Baqar</p>
+                </div>
               </Link>
               <Link to="contact" style={{ textDecoration: "none" }}>
                 <Button btnColor="#ee9b00" type="rounded">
                   Contact
                 </Button>
               </Link>
-              <ul className={styles.hel}>
+              <ul
+                className={styles.hel}
+                style={{ fontSize: "calc(1.2vw + 0.3rem)" }}
+              >
                 <Link to="projects">Projects</Link>
                 <Link to="about">About</Link>
                 <Link to="contact">Contact</Link>

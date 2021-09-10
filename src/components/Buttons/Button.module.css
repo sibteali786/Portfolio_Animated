@@ -1,14 +1,14 @@
 .btn {
   font-family: "Alumni Sans", sans-serif;
   position: relative;
-  font-weight: 400;
-  font-size: 1.3rem;
+  font-weight: 600;
+  font-size: calc(1.1vw + 0.4rem);
   line-height: 2;
-  height: 50px;
+  height: calc(6vh + 20px);
   transition: all 200ms linear;
   border-radius: 4px;
-  width: 160px;
-  letter-spacing: 1px;
+  width: calc(10vw + 20px);
+  letter-spacing: 0.4rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
