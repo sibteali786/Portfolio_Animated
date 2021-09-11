@@ -1,10 +1,12 @@
+@import "./Util/config";
+
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  background: #000000;
+  background: $backgroundColor;
 }
 .container {
   display: flex;
@@ -12,6 +14,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  max-width: $maxWidth;
   width: calc(100vw - 1em);
   margin: 0 auto;
 }
@@ -25,7 +28,7 @@ body {
   width: calc(100vw - 1em);
   margin: 0 auto;
   font-family: "Alumni Sans";
-  color: #fffafb;
+  color: $fontColor;
   background-image: url(../Resources/confetti-doodles.svg);
   height: 100vh;
   width: 100vw;
@@ -50,7 +53,7 @@ nav {
 .hel a {
   position: relative;
   text-decoration: none;
-  color: #fffafb;
+  color: $fontColor;
   margin: 0 0.8rem;
   padding: 0;
   letter-spacing: 0.3rem;
@@ -62,7 +65,7 @@ nav {
 .hel a:before {
   content: "";
   position: absolute;
-  background-color: #ee9b00;
+  background-color: $accentColor;
   height: 3px;
   width: 0px;
   bottom: -5px;

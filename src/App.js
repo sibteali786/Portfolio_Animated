@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { SibtealiBaqar, Contact, Projects, About } from "./Pages";
 import { Button } from "./components";
-import { ReactComponent as ReactLogo } from "./Resources/logo.svg";
+import { ReactComponent as ReactLogo } from "./Resources/logo_2.svg";
 
 function App() {
   const [loading, setloading] = useState(false);
@@ -18,7 +18,7 @@ function App() {
     <div>
       {loading ? (
         <div className={styles.container}>
-          <ClockLoader color={"#ee9b00"} loading={loading} size={150} />
+          <ClockLoader color={"#FCAB10"} loading={loading} size={150} />
         </div>
       ) : (
         <div className={styles.container_1}>
