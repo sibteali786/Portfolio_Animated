@@ -1,7 +1,7 @@
 //Button.js
 
 import React, { useState } from "react";
-import styles from "./Button.module.css";
+import styles from "./Button.module.scss";
 
 const Button = ({
   children,

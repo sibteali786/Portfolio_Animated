@@ -1,10 +1,10 @@
-import styles from "./App.module.css";
+import styles from "./Sass/App.module.scss";
 import ClockLoader from "react-spinners/ClockLoader";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { SibtealiBaqar, Contact, Projects, About } from "./Pages";
 import { Button } from "./components";
-import { ReactComponent as ReactLogo } from "./logo.svg";
+import { ReactComponent as ReactLogo } from "./Resources/logo.svg";
 
 function App() {
   const [loading, setloading] = useState(false);

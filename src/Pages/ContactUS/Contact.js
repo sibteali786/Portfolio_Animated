@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./style.module.css";
+import styles from "../../Sass/components/contact.module.scss";
 import useWebAnimations, { fadeIn } from "@wellyshen/use-web-animations";
 export default Contact;
 
