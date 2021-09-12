@@ -5,6 +5,41 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { SibtealiBaqar, Contact, Projects, About } from "./Pages";
 import { Button } from "./components";
 import { ReactComponent as ReactLogo } from "./Resources/logo_2.svg";
+import styled, { keyframes } from "styled-components";
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(87deg) scale(0.7);
+  }
+`;
+const color = keyframes`
+  from {
+    stroke:#fcab10;
+  }
+  to {
+    stroke:none;
+    fill:#fffafb;
+  }
+`;
+const StyledLogo = styled(ReactLogo)`
+  &:hover {
+    animation: ${rotate} 1 0.5s ease-in both;
+    #upperPart {
+      animation: ${color} 1 0.5s ease-in both;
+    }
+    #lowerPart {
+      animation: ${color} 1 0.5s ease-in both;
+    }
+    #middlePart {
+      animation: ${color} 1 0.5s ease-in both;
+    }
+  }
+  display: block;
+  margin-right: 0.8rem;
+`;
 
 function App() {
   const [loading, setloading] = useState(false);
@@ -35,11 +70,7 @@ function App() {
                     color: "#fffafb",
                   }}
                 >
-                  <ReactLogo
-                    style={{
-                      marginRight: "0.8rem",
-                    }}
-                  />
+                  <StyledLogo />
                   <p className={styles.Title}>ibteali Baqar</p>
                 </div>
               </Link>

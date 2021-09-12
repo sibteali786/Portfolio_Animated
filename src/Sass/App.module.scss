@@ -1,4 +1,5 @@
 @import "./Util/config";
+@import "./Util/function";
 
 * {
   margin: 0;
@@ -91,3 +92,4 @@ a:hover:before {
 .Title {
   font-size: calc(2vw + 1rem);
 }
+
