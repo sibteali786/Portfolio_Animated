@@ -7,16 +7,9 @@ import { Button } from "./components";
 import { ReactComponent as ReactLogo } from "./Resources/logo_2.svg";
 import styled, { keyframes } from "styled-components";
 
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(87deg) scale(0.7);
-  }
-`;
 const color = keyframes`
   from {
+    fill:none;
     stroke:#fcab10;
   }
   to {
@@ -25,16 +18,13 @@ const color = keyframes`
   }
 `;
 const StyledLogo = styled(ReactLogo)`
+  transition: transform 0.8s;
   &:hover {
-    animation: ${rotate} 1 0.5s ease-in both;
-    #upperPart {
-      animation: ${color} 1 0.5s ease-in both;
-    }
-    #lowerPart {
-      animation: ${color} 1 0.5s ease-in both;
-    }
+    transform: rotate(447deg) scale(0.6);
+    #upperPart,
+    #lowerPart,
     #middlePart {
-      animation: ${color} 1 0.5s ease-in both;
+      animation: ${color} 1 1s linear both;
     }
   }
   display: block;
