@@ -24,7 +24,7 @@ const StyledLogo = styled(ReactLogo)`
     #upperPart,
     #lowerPart,
     #middlePart {
-      animation: ${color} 1 1s linear both;
+      animation: ${color} 1 0.8s linear both;
     }
   }
   display: block;
