@@ -11,18 +11,19 @@ export default SibtealiBaqar;
 function SibtealiBaqar() {
   const { ref } = useWebAnimations({ ...bounce });
   const MouseEnterHandler = () => {
-    gsap.from("#Sibteali", {
-      duration: 0.5,
+    gsap.from(".S", {
+      duration: 1,
       opacity: 0,
       ease: "bounce.out",
       y: -100,
+      stagger: 0.1,
     });
-    gsap.to("#Sibteali", {
-      duration: 0.5,
-      opacity: 1,
-      ease: "bounce.out",
-      y: 100,
-    });
+    // gsap.to(".S", {
+    //   duration: 0.5,
+    //   opacity: 1,
+    //   ease: "bounce.out",
+    //   y: 100,
+    // });
   };
 
   return (
