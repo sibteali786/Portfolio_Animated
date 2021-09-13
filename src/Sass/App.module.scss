@@ -28,7 +28,7 @@ body {
   height: 100vh;
   width: calc(100vw - 1em);
   margin: 0 auto;
-  font-family: "Alumni Sans";
+  font-family: $pageFont;
   color: $fontColor;
   background-image: url(../Resources/confetti-doodles.svg);
   height: 100vh;
@@ -92,4 +92,3 @@ a:hover:before {
 .Title {
   font-size: calc(2vw + 1rem);
 }
-
