@@ -5,32 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { SibtealiBaqar, Contact, Projects, About } from "./Pages";
 import { Button } from "./components";
 import { ReactComponent as ReactLogo } from "./Resources/logo_2.svg";
-import styled, { keyframes } from "styled-components";
 import gsap from "gsap";
-
-const color = keyframes`
-  from {
-    fill:none;
-    stroke:#fcab10;
-  }
-  to {
-    stroke:none;
-    fill:#fffafb;
-  }
-`;
-const StyledLogo = styled(ReactLogo)`
-  transition: transform 0.8s;
-  &:hover {
-    transform: rotate(447deg) scale(0.6);
-    #upperPart,
-    #lowerPart,
-    #middlePart {
-      animation: ${color} 1 0.8s linear both;
-    }
-  }
-  display: block;
-  margin-right: 0.8rem;
-`;
 
 function App() {
   const [loading, setloading] = useState(false);
@@ -44,6 +19,24 @@ function App() {
       scale: 1.2,
       ease: "Power3.out",
     });
+    tl.from(
+      deepRef(".nav"),
+      {
+        duration: 1,
+        y: -100,
+        ease: "Power3.out",
+      },
+      "-=1"
+    );
+    tl.from(
+      deepRef("#Ali"),
+      {
+        duration: 2,
+        rotationY: 360,
+        ease: "Power3.out",
+      },
+      "+=0.5"
+    );
   };
   useEffect(() => {
     setloading(true);
@@ -62,7 +55,7 @@ function App() {
       ) : (
         <div className={styles.container_1} ref={Textref}>
           <Router>
-            <nav className={styles.navBar}>
+            <nav className={`${styles.navBar} nav`}>
               <Link to="/" style={{ textDecoration: "none" }}>
                 <div
                   style={{
@@ -74,7 +67,7 @@ function App() {
                     color: "#fffafb",
                   }}
                 >
-                  <StyledLogo />
+                  <ReactLogo style={{ marginRight: "0.5rem" }} />
                   <p className={styles.Title}>ibteali Baqar</p>
                 </div>
               </Link>
