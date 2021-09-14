@@ -1,11 +1,12 @@
 import styles from "./Sass/App.module.scss";
 import ClockLoader from "react-spinners/ClockLoader";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { SibtealiBaqar, Contact, Projects, About } from "./Pages";
 import { Button } from "./components";
 import { ReactComponent as ReactLogo } from "./Resources/logo_2.svg";
 import styled, { keyframes } from "styled-components";
+import gsap from "gsap";
 
 const color = keyframes`
   from {
@@ -33,10 +34,23 @@ const StyledLogo = styled(ReactLogo)`
 
 function App() {
   const [loading, setloading] = useState(false);
+  const Textref = useRef(null);
+  const deepRef = gsap.utils.selector(Textref);
+  const MouseEnterHandler = () => {
+    var tl = gsap.timeline();
+    tl.to(deepRef(".text"), {
+      duration: 2,
+      opacity: 1,
+      scale: 1.2,
+      ease: "Power3.out",
+    });
+  };
   useEffect(() => {
     setloading(true);
     setTimeout(() => {
       setloading(false);
+      console.log("Run");
+      MouseEnterHandler();
     }, 1000);
   }, []);
   return (
@@ -46,7 +60,7 @@ function App() {
           <ClockLoader color={"#FCAB10"} loading={loading} size={150} />
         </div>
       ) : (
-        <div className={styles.container_1}>
+        <div className={styles.container_1} ref={Textref}>
           <Router>
             <nav className={styles.navBar}>
               <Link to="/" style={{ textDecoration: "none" }}>
