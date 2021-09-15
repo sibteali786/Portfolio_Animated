@@ -1,19 +1,12 @@
 import React from "react";
 import styles from "../../Sass/components/Sibteali.module.scss";
-import { useState, useEffect, useRef } from "react";
-import useWebAnimations, {
-  bounce,
-  bounceIn,
-} from "@wellyshen/use-web-animations";
-import gsap from "gsap";
+import { ReactComponent as ReactLogo } from "../../Resources/name_text_SVG-01.svg";
 export default TextAnimation;
 
 function TextAnimation() {
   return (
-    <div className={`${styles.font}`}>
-      <h1 className={`text`} style={{ opacity: "0" }}>
-        Syed Sibteali Baqar
-      </h1>
+    <div className={`${styles.display}`}>
+      <ReactLogo className={`text`} style={{ opacity: "0" }} />
     </div>
   );
 }

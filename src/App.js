@@ -6,9 +6,14 @@ import { SibtealiBaqar, Contact, Projects, About } from "./Pages";
 import { Button } from "./components";
 import { ReactComponent as ReactLogo } from "./Resources/logo_2.svg";
 import gsap from "gsap";
+import { Parallax } from "react-parallax";
 
 function App() {
   const [loading, setloading] = useState(false);
+  const [offset, setOffset] = useState(0);
+  const handleScroll = () => {
+    setOffset(window.pageYOffset);
+  };
   const Textref = useRef(null);
   const deepRef = gsap.utils.selector(Textref);
   const MouseEnterHandler = () => {
@@ -23,7 +28,7 @@ function App() {
       deepRef(".nav"),
       {
         duration: 1,
-        y: -100,
+        y: -1000,
         ease: "Power3.out",
       },
       "-=1"
@@ -39,13 +44,17 @@ function App() {
     );
   };
   useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
     setloading(true);
     setTimeout(() => {
       setloading(false);
       console.log("Run");
       MouseEnterHandler();
     }, 1000);
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <div>
       {loading ? (
@@ -53,7 +62,11 @@ function App() {
           <ClockLoader color={"#FCAB10"} loading={loading} size={150} />
         </div>
       ) : (
-        <div className={styles.container_1} ref={Textref}>
+        <div
+          className={styles.container_1}
+          ref={Textref}
+          style={{ transform: `translateY(-${offset * 0.1}px)` }}
+        >
           <Router>
             <nav className={`${styles.navBar} nav`}>
               <Link to="/" style={{ textDecoration: "none" }}>

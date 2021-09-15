@@ -22,7 +22,7 @@ const Button = ({
     color: labelColor || "white",
   };
   const outlineStyles = {
-    border: `1px solid ${btnColor}`,
+    border: `2px solid ${btnColor}`,
     color: btnColor,
     backgroundColor: "white",
   };
@@ -32,13 +32,13 @@ const Button = ({
   };
 
   const roundedStyle = {
-    border: `1px solid ${btnColor}`,
+    border: `3px solid ${btnColor}`,
     backgroundColor: "transparent",
     color: labelColor || "white",
     borderRadius: "30px",
   };
   const roundedHoverStyle = {
-    border: `1px solid ${btnColor}`,
+    border: `3px solid ${btnColor}`,
     backgroundColor: btnColor,
     color: labelColor || "white",
     borderRadius: "30px",
