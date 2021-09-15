@@ -8,6 +8,7 @@
 
 body {
   background: $backgroundColor;
+  max-width: $maxWidth;
 }
 .container {
   display: flex;
@@ -15,30 +16,18 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  max-width: $maxWidth;
+
   width: calc(100vw - 1em);
   margin: 0 auto;
 }
 .container_1 {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
   width: calc(100vw - 1em);
   margin: 0 auto;
   font-family: $pageFont;
   color: $fontColor;
   background: url(../Resources/svgexport-1.svg);
-  background-size: 100% 200%;
-  height: 100vh;
-  width: 100vw;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  // overflow: hidden;
+  overflow-y: hidden;
 }
 nav {
   display: flex;

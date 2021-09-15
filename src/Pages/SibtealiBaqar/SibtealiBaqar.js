@@ -4,7 +4,7 @@ import { TextAnimation } from "../../components";
 
 function SibtealiBaqar() {
   return (
-    <div className={styles.font}>
+    <div>
       <TextAnimation />
     </div>
   );

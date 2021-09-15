@@ -18,10 +18,9 @@ function App() {
   const deepRef = gsap.utils.selector(Textref);
   const MouseEnterHandler = () => {
     var tl = gsap.timeline();
-    tl.to(deepRef(".text"), {
+    tl.to(deepRef(".Ali"), {
       duration: 2,
       opacity: 1,
-      scale: 1.2,
       ease: "Power3.out",
     });
     tl.from(
@@ -68,7 +67,7 @@ function App() {
           style={{ transform: `translateY(-${offset * 0.1}px)` }}
         >
           <Router>
-            <nav className={`${styles.navBar} nav`}>
+            <nav className={` nav`}>
               <Link to="/" style={{ textDecoration: "none" }}>
                 <div
                   style={{
@@ -98,14 +97,14 @@ function App() {
                 <Link to="contact">Contact</Link>
               </ul>
             </nav>
-            <div>
+            <main>
               <Routes>
                 <Route path="/" element={<SibtealiBaqar />} />
                 <Route path="about" element={<About />} />
                 <Route path="projects" element={<Projects />} />
                 <Route path="contact" element={<Contact />} />
               </Routes>
-            </div>
+            </main>
           </Router>
         </div>
       )}
