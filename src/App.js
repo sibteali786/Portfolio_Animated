@@ -6,7 +6,6 @@ import { SibtealiBaqar, Contact, Projects, About } from "./Pages";
 import { Button } from "./components";
 import { ReactComponent as ReactLogo } from "./Resources/logo_2.svg";
 import gsap from "gsap";
-import { Parallax } from "react-parallax";
 
 function App() {
   const [loading, setloading] = useState(false);
@@ -67,13 +66,9 @@ function App() {
           <ClockLoader color={"#FCAB10"} loading={loading} size={150} />
         </div>
       ) : (
-        <div
-          className={styles.container_1}
-          ref={Textref}
-          style={{ transform: `translateY(-${offset * 0.1}px)` }}
-        >
+        <div className={styles.container_1} ref={Textref}>
           <Router>
-            <nav className={` nav`}>
+            <nav className={`nav`}>
               <Link to="/" style={{ textDecoration: "none" }}>
                 <div
                   style={{
@@ -94,10 +89,7 @@ function App() {
                   Contact
                 </Button>
               </Link>
-              <ul
-                className={styles.hel}
-                style={{ fontSize: "calc(1.2vw + 0.3rem)" }}
-              >
+              <ul style={{ fontSize: "calc(1.2vw + 0.3rem)" }}>
                 <Link to="projects">Projects</Link>
                 <Link to="about">About</Link>
                 <Link to="contact">Contact</Link>

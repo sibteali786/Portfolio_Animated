@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "../../Sass/components/Sibteali.module.scss";
-import { ReactComponent as ReactLogo } from "../../Resources/Myname.svg";
 import Typewriter from "typewriter-effect";
 export default TextAnimation;
 

@@ -6,21 +6,23 @@
 
 .text {
   grid-column-start: 3;
-  grid-column-end: 61;
+  grid-column-end: 51;
   text-align: left;
   text-justify: distribute;
   padding: 0 60px;
   // width: 70%;
   margin: 0 auto;
-  letter-spacing: 0.7rem;
+  letter-spacing: 0.5rem;
   font-size: calc(5rem + 1vw);
   @media (max-width: 800px) {
     font-size: calc(4rem + 1vw);
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.3rem;
+    grid-column-start: 3;
+    grid-column-end: 61;
   }
   @media (max-width: 600px) {
-    font-size: calc(2.4rem + 1vw);
-    letter-spacing: 0.3rem;
+    font-size: calc(2.8rem + 1vw);
+    letter-spacing: 0.1rem;
     padding: 0 20px;
   }
 }

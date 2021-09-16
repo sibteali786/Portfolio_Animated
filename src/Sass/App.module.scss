@@ -25,10 +25,10 @@ body {
   width: calc(100vw - 1em);
   margin: 0 auto;
   font-family: $pageFont;
-  font-weight: 800;
+  font-weight: 600;
   color: $fontColor;
   background: url(../Resources/svgexport-1.svg);
-  overflow: hidden;
+  // overflow: hidden;
 }
 nav {
   display: flex;
@@ -41,42 +41,46 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-}
-.hel a {
-  position: relative;
-  text-decoration: none;
-  color: $fontColor;
-  margin: 0 0.8rem;
-  padding: 0;
-  letter-spacing: 0.3rem;
-  text-align: center;
-  transition: all 0.2s ease-in-out;
-}
+  ul {
+    a {
+      position: relative;
+      text-decoration: none;
+      color: $fontColor;
+      margin: 0 0.8rem;
+      padding: 0;
+      letter-spacing: 0.3rem;
+      text-align: center;
+      transition: all 0.2s ease-in-out;
+      &:after,
+      &:before {
+        content: "";
+        position: absolute;
+        background-color: $accentColor;
+        height: 3px;
+        width: 0px;
+        bottom: -5px;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+        transition-duration: 0.5s;
+      }
 
-.hel a:after,
-.hel a:before {
-  content: "";
-  position: absolute;
-  background-color: $accentColor;
-  height: 3px;
-  width: 0px;
-  bottom: -5px;
-  opacity: 0;
-  transition: all 0.2s ease-in-out;
-  transition-duration: 0.5s;
-}
+      &:before {
+        left: 50%;
+      }
 
-.hel a:before {
-  left: 50%;
-}
-.hel a:after {
-  right: 50%;
-}
+      &:after {
+        right: 50%;
+      }
 
-.hel a:hover:after,
-a:hover:before {
-  width: 50%;
-  opacity: 1;
+      &:hover {
+        &:before,
+        &:after {
+          width: 50%;
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 
 /* Title */
