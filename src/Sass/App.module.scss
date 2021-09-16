@@ -89,7 +89,8 @@ nav {
 
 .MobileNav {
   // display: none;
-  background: #ffffff;
+
+  background: $backgroundColor;
   position: absolute;
   top: 0;
   left: 0;
@@ -108,21 +109,23 @@ nav {
     padding: 0;
     width: 60%;
     height: 59%;
-    &:first-child {
+    letter-spacing: 0.2rem;
+    & a:nth-of-type(1) {
       margin-left: 20%;
     }
-    &:nth-child(2) {
+    & a:nth-of-type(2) {
       align-self: flex-end;
     }
-    &:nth-child(3) {
+    & a:nth-of-type(3) {
       margin-top: 10%;
     }
     a {
       text-decoration: none;
       position: relative;
+      color: $fontColor;
     }
   }
 }
-
-.list {
+.toggle{
+  visibility: hidden;
 }

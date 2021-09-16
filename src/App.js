@@ -71,7 +71,7 @@ function App() {
         <div className={styles.container_1} ref={Textref}>
           <Router>
             <nav className={`nav`}>
-              <Link to="/" style={{ textDecoration: "none" }}>
+              <Link to="/" style={{ textDecoration: "none", zIndex: 120 }}>
                 <div
                   style={{
                     letterSpacing: "0.3rem",
@@ -82,7 +82,10 @@ function App() {
                     color: "#fffafb",
                   }}
                 >
-                  <ReactLogo style={{ marginRight: "0.5rem" }} />
+                  <ReactLogo
+                    className={`logo`}
+                    style={{ marginRight: "0.5rem" }}
+                  />
                   <p className={styles.Title}>ibteali Baqar</p>
                 </div>
               </Link>
@@ -95,14 +98,14 @@ function App() {
                 <Link to="projects">Projects</Link>
                 <Link to="about">About</Link>
               </ul>
-            </nav>
-            <div className={`${styles.MobileNav}`}>
-              <div className={`list`}>
-                <Link to="projects">Projects</Link>
-                <Link to="about">About</Link>
-                <Link to="contact">Contact</Link>
+              <div className={`${styles.MobileNav} ${styles.toggle}`}>
+                <div className={`list`}>
+                  <Link to="projects">Projects</Link>
+                  <Link to="about">About</Link>
+                  <Link to="contact">Contact</Link>
+                </div>
               </div>
-            </div>
+            </nav>
             <main>
               <Routes>
                 <Route path="/" element={<SibtealiBaqar />} />
