@@ -18,9 +18,15 @@ function App() {
   const deepRef = gsap.utils.selector(Textref);
   const MouseEnterHandler = () => {
     var tl = gsap.timeline();
-    tl.to(deepRef(".Ali"), {
+    tl.to(deepRef(".Text"), {
+      duration: 0.5,
+      scale: 0.7,
+      ease: "Power3.out",
+    });
+    tl.to(deepRef(".Text"), {
       duration: 2,
       opacity: 1,
+      scale: 1,
       ease: "Power3.out",
     });
     tl.from(

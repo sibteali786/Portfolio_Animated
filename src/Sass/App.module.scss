@@ -25,9 +25,10 @@ body {
   width: calc(100vw - 1em);
   margin: 0 auto;
   font-family: $pageFont;
+  font-weight: 800;
   color: $fontColor;
   background: url(../Resources/svgexport-1.svg);
-  overflow-y: hidden;
+  overflow: hidden;
 }
 nav {
   display: flex;

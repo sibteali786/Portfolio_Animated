@@ -7,11 +7,23 @@
 .text {
   grid-column-start: 3;
   grid-column-end: 61;
-  text-align: center;
-  padding: 0 20px;
-  max-width: 90%;
+  text-align: left;
+  text-justify: distribute;
+  padding: 0 60px;
+  // width: 70%;
   margin: 0 auto;
+  letter-spacing: 0.7rem;
+  font-size: calc(5rem + 1vw);
+  @media (max-width: 800px) {
+    font-size: calc(4rem + 1vw);
+    letter-spacing: 0.5rem;
+  }
+  @media (max-width: 600px) {
+    font-size: calc(2.4rem + 1vw);
+    letter-spacing: 0.3rem;
+    padding: 0 20px;
+  }
 }
 .font {
-  margin-top: calc(200px + 0.5rem);
+  margin-top: calc(250px + 0.5rem);
 }
