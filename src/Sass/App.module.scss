@@ -28,7 +28,6 @@ body {
   font-weight: 600;
   color: $fontColor;
   background: url(../Resources/svgexport-1.svg);
-  // overflow: hidden;
 }
 nav {
   display: flex;
@@ -36,7 +35,7 @@ nav {
   justify-content: space-between;
   background-color: transparent;
   padding: 0.7rem 2rem;
-  position: fixed;
+  position: absolute;
   z-index: 1;
   top: 0;
   left: 0;
@@ -86,4 +85,44 @@ nav {
 /* Title */
 .Title {
   font-size: calc(2vw + 1rem);
+}
+
+.MobileNav {
+  // display: none;
+  background: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  font-size: 2rem;
+  div {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    width: 60%;
+    height: 59%;
+    &:first-child {
+      margin-left: 20%;
+    }
+    &:nth-child(2) {
+      align-self: flex-end;
+    }
+    &:nth-child(3) {
+      margin-top: 10%;
+    }
+    a {
+      text-decoration: none;
+      position: relative;
+    }
+  }
+}
+
+.list {
 }

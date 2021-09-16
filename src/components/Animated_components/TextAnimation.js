@@ -50,6 +50,9 @@ function TextAnimation() {
           />
         </div>
       </div>
+      <div>
+        
+      </div>
     </div>
   );
 }

@@ -10,12 +10,9 @@ import gsap from "gsap";
 function App() {
   const [loading, setloading] = useState(false);
   const [offset, setOffset] = useState(0);
-  const handleScroll = () => {
-    setOffset(window.pageYOffset);
-  };
   const Textref = useRef(null);
   const deepRef = gsap.utils.selector(Textref);
-  const MouseEnterHandler = () => {
+  const ScreenLoadHandler = () => {
     var tl = gsap.timeline();
     tl.to(deepRef(".Text"), {
       duration: 0.5,
@@ -44,19 +41,24 @@ function App() {
         rotationY: 360,
         ease: "Power3.out",
       },
-      "+=0.5"
+      "-=0.5"
+    );
+    tl.to(
+      deepRef("#lowerPart, #upperPart, #middlePart"),
+      {
+        duration: 1,
+        fill: "#fcab10",
+        ease: "Power3.out",
+      },
+      "-=1"
     );
   };
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
     setloading(true);
     setTimeout(() => {
       setloading(false);
-      console.log("Run");
-      MouseEnterHandler();
+      ScreenLoadHandler();
     }, 1000);
-
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -92,9 +94,15 @@ function App() {
               <ul style={{ fontSize: "calc(1.2vw + 0.3rem)" }}>
                 <Link to="projects">Projects</Link>
                 <Link to="about">About</Link>
-                <Link to="contact">Contact</Link>
               </ul>
             </nav>
+            <div className={`${styles.MobileNav}`}>
+              <div className={`list`}>
+                <Link to="projects">Projects</Link>
+                <Link to="about">About</Link>
+                <Link to="contact">Contact</Link>
+              </div>
+            </div>
             <main>
               <Routes>
                 <Route path="/" element={<SibtealiBaqar />} />

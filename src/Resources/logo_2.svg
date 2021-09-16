@@ -1,8 +1,8 @@
 <svg id="Ali" xmlns="http://www.w3.org/2000/svg" width="38.666" height="82.043" viewBox="0 0 48.666 102.043">
 <g class="inner">
 
-  <path id="lowerPart" d="M255.987 153.12a4.06 4.06 0 0 1-3.437-1.899l-18.662-29.69h3.457a4.06 4.06 0 0 1 3.462 1.941l15.097 24.678h.166l15.096-24.678a4.06 4.06 0 0 1 3.463-1.941h3.457l-18.663 29.69a4.06 4.06 0 0 1-3.436 1.899Z" transform="translate(-232.9829 -51.577)" style="fill:none;stroke:#ff9b00;stroke-miterlimit:10"/>
-  <path id="middlePart" d="m235.038 86.581 42.84 27.091a3.203 3.203 0 0 1 1.43 3.332l-.475 2.384-42.831-27.157a3.202 3.202 0 0 1-1.426-3.33Z" transform="translate(-232.9829 -51.577)" style="fill:none;stroke:#ff9b00;stroke-miterlimit:10"/>
-  <path id="upperPart" d="M258.098 52.077a3.526 3.526 0 0 1 2.949 1.592l19.675 29.997h-4.07a3.526 3.526 0 0 1-2.975-1.633l-16.025-25.19h-.174l-16.024 25.19a3.526 3.526 0 0 1-2.975 1.633h-4.071l19.675-29.997a3.526 3.526 0 0 1 2.949-1.592Z" transform="translate(-232.9829 -51.577)" style="fill:none;stroke:#ff9b00;stroke-miterlimit:10"/>
+  <path id="lowerPart" d="M255.987 153.12a4.06 4.06 0 0 1-3.437-1.899l-18.662-29.69h3.457a4.06 4.06 0 0 1 3.462 1.941l15.097 24.678h.166l15.096-24.678a4.06 4.06 0 0 1 3.463-1.941h3.457l-18.663 29.69a4.06 4.06 0 0 1-3.436 1.899Z" transform="translate(-232.9829 -51.577)" style="stroke:#ff9b00;stroke-miterlimit:10"/>
+  <path id="middlePart" d="m235.038 86.581 42.84 27.091a3.203 3.203 0 0 1 1.43 3.332l-.475 2.384-42.831-27.157a3.202 3.202 0 0 1-1.426-3.33Z" transform="translate(-232.9829 -51.577)" style="stroke:#ff9b00;stroke-miterlimit:10"/>
+  <path id="upperPart" d="M258.098 52.077a3.526 3.526 0 0 1 2.949 1.592l19.675 29.997h-4.07a3.526 3.526 0 0 1-2.975-1.633l-16.025-25.19h-.174l-16.024 25.19a3.526 3.526 0 0 1-2.975 1.633h-4.071l19.675-29.997a3.526 3.526 0 0 1 2.949-1.592Z" transform="translate(-232.9829 -51.577)" style="stroke:#ff9b00;stroke-miterlimit:10"/>
 </g>
 </svg>
