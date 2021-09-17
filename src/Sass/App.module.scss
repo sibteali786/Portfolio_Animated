@@ -22,7 +22,7 @@ body {
 }
 .container_1 {
   height: 100vh;
-  width: calc(100vw - 1em);
+  width: calc(100vw - 5em);
   margin: 0 auto;
   font-family: $pageFont;
   font-weight: 600;
@@ -126,6 +126,6 @@ nav {
     }
   }
 }
-.toggle{
+.toggle {
   visibility: hidden;
 }
