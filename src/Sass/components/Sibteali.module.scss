@@ -1,7 +1,7 @@
 .display {
   display: grid;
-  grid-template-columns: 3fr 2fr;
-  align-content: center;
+  grid-template-columns: 2fr 2fr;
+  align-content: space-between;
   @media (max-width: 600px) {
     display: block;
     overflow: hidden;
@@ -11,8 +11,8 @@
 .text {
   text-align: left;
   text-justify: distribute;
-  letter-spacing: 0.5rem;
-  font-size: calc(3.2rem + 1vw);
+  letter-spacing: 0.3rem;
+  font-size: calc(3rem + 1vw);
   @media (max-width: 800px) {
     font-size: calc(2.5rem + 1vw);
     letter-spacing: 0.3rem;
@@ -31,4 +31,5 @@
   width: 80%;
   height: auto;
   margin: 0 2rem;
+  max-width: 100%;
 }
