@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../../Sass/components/Sibteali.module.scss";
 import Typewriter from "typewriter-effect";
-import { ReactComponent as HeroSvg } from "../../Resources/hero.svg";
+import { ReactComponent as HeroSvg } from "../../Resources/heroNew.svg";
 export default TextAnimation;
 
 function TextAnimation() {
@@ -52,12 +52,7 @@ function TextAnimation() {
         </div>
       </div>
       <div>
-        <img
-          src={require("../../Resources/hero.svg").default}
-          alt="Stars"
-          style={{  }}
-          className={styles.heroImg}
-        />
+        <HeroSvg className={`${styles.heroImg} heroSvg`} />
       </div>
     </div>
   );

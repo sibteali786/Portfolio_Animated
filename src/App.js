@@ -25,6 +25,35 @@ function App() {
       scale: 1,
       ease: "Power3.out",
     });
+    tl.to(
+      deepRef("#smallGalax"),
+      {
+        duration: 1,
+        rotation: 360,
+        transformOrigin: "50% 50%",
+        ease: "Power.out",
+      },
+      "-=2"
+    );
+    tl.to(
+      deepRef("#smallGalax2"),
+      {
+        duration: 1,
+        rotation: 360,
+        transformOrigin: "50% 50%",
+        ease: "Power.out",
+      },
+      "-=2"
+    );
+    tl.from(
+      deepRef("#smallPlanets"),
+      {
+        duration: 1,
+        rotation: 360,
+        ease: "Power.out",
+      },
+      "-=3"
+    );
     tl.from(
       deepRef(".nav"),
       {
