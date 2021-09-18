@@ -6,6 +6,9 @@ import { SibtealiBaqar, Contact, Projects, About } from "./Pages";
 import { Button } from "./components";
 import { ReactComponent as ReactLogo } from "./Resources/logo_2.svg";
 import gsap from "gsap";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+
+gsap.registerPlugin(MotionPathPlugin);
 
 function App() {
   const [loading, setloading] = useState(false);
@@ -14,6 +17,11 @@ function App() {
   const deepRef = gsap.utils.selector(Textref);
   const ScreenLoadHandler = () => {
     var tl = gsap.timeline();
+    tl.set(deepRef(".circle_1"), {
+      xPercent: -50,
+      yPercent: -50,
+      transformOrigin: "50% 50%",
+    });
     tl.to(deepRef(".Text"), {
       duration: 0.5,
       scale: 0.7,
@@ -25,35 +33,35 @@ function App() {
       scale: 1,
       ease: "Power3.out",
     });
-    tl.to(
-      deepRef("#smallGalax"),
-      {
-        duration: 1,
-        rotation: 360,
-        transformOrigin: "50% 50%",
-        ease: "Power.out",
-      },
-      "-=2"
-    );
-    tl.to(
-      deepRef("#smallGalax2"),
-      {
-        duration: 1,
-        rotation: 360,
-        transformOrigin: "50% 50%",
-        ease: "Power.out",
-      },
-      "-=2"
-    );
-    tl.from(
-      deepRef("#smallPlanets"),
-      {
-        duration: 1,
-        rotation: 360,
-        ease: "Power.out",
-      },
-      "-=3"
-    );
+    // tl.to(
+    //   deepRef("#smallGalax"),
+    //   {
+    //     duration: 1,
+    //     rotation: 360,
+    //     transformOrigin: "50% 50%",
+    //     ease: "Power.out",
+    //   },
+    //   "-=2"
+    // );
+    // tl.to(
+    //   deepRef("#smallGalax2"),
+    //   {
+    //     duration: 1,
+    //     rotation: 360,
+    //     transformOrigin: "50% 50%",
+    //     ease: "Power.out",
+    //   },
+    //   "-=2"
+    // );
+    // tl.from(
+    //   deepRef("#smallPlanets"),
+    //   {
+    //     duration: 1,
+    //     rotation: 360,
+    //     ease: "Power.out",
+    //   },
+    //   "-=3"
+    // );
     tl.from(
       deepRef(".nav"),
       {

@@ -40,9 +40,11 @@
   <path id="ellipse_2" d="M240 569c-36 0-69-1-98-3-39-4-70-9-91-16-24-7-36-16-37-27-2-21 40-41 75-54l1 3c-49 18-74 35-73 50 2 20 48 34 125 41 79 6 184 4 294-7s213-29 290-51c74-21 116-44 114-64-1-15-33-28-89-36v-3c41 6 90 17 92 39 1 11-9 22-30 34s-49 22-87 33a2037 2037 0 0 1-486 61Z" transform="translate(0 -52)" style="fill:#6c63ff"/>
   <circle id="smallGalax3" cx="529.4" cy="54" r="9.4" style="fill:#e6e6e6"/>
   <circle cx="19.1" cy="381.4" r="17.5" style="fill:#e6e6e6"/>
+   
+    <circle id="circle_1" cx="171.1" cy="364.4" r="17.5" style="fill:#6c63ff"/>
+    <circle id="circle_2" cx="838.1" cy="382.4" r="17.5" style="fill:#6c63ff"/>
+  
   <g id="smallPlanets">
-    <circle cx="171.1" cy="364.4" r="17.5" style="fill:#6c63ff"/>
-    <circle cx="838.1" cy="382.4" r="17.5" style="fill:#6c63ff"/>
     <circle cx="127.1" cy="56.4" r="10.7" style="fill:#ff6584"/>
     <circle cx="77.1" cy="462.4" r="10.7" style="fill:#ff6584"/>
     <circle cx="807.1" cy="287.4" r="10.7" style="fill:#ff6584"/>
