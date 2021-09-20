@@ -7,21 +7,46 @@ import gsap from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
 gsap.registerPlugin(MotionPathPlugin);
+MotionPathPlugin.convertToPath("#ellipse_1");
 export default TextAnimation;
 const GsapHandler = () => {
-  // gsap.set("#circle_1", {
-  //   xPercent: -50,
-  //   yPercent: -50,
-  //   transformOrigin: "50% 50%",
-  // });
-  // gsap.to("#circle_1", {
-  //   duration: 20,
-  //   motionPath: {
-  //     path: "#ellipse_1",
-  //     autoRotate: true,
-  //   },
-  //   repeat: -1,
-  // });
+  var tl = gsap.timeline();
+  tl.set("#circle_2, #circle_1", {
+    opacity: 0,
+  });
+  tl.to("#circle_2, #circle_1", {
+    delay: 2,
+    opacity: 1,
+    duration: 2,
+  });
+
+  tl.to("#circle_2", {
+    opacity: 1,
+    duration: 20,
+    motionPath: {
+      path: "#ellipse",
+      align: "#ellipse",
+      alignOrigin: [0.5, 0.5],
+    },
+    ease: "none",
+    repeat: -1,
+  });
+  tl.to(
+    "#circle_1",
+    {
+      duration: 20,
+      delay: 2,
+      opacity: 1,
+      motionPath: {
+        path: "#ellipse1",
+        align: "#ellipse1",
+        alignOrigin: [0.5, 0.5],
+      },
+      ease: "none",
+      repeat: -1,
+    },
+    "-=20"
+  );
 };
 function TextAnimation() {
   useEffect(() => {
@@ -142,10 +167,26 @@ function TextAnimation() {
             style={{ fill: "#6c63ff" }}
           />
           <path
-            id="ellipse_1"
-            d="m719 533-43-2c-79-5-183-22-290-49s-207-60-280-93c-35-16-62-31-80-45-20-15-28-28-25-38 5-21 50-25 88-25v3c-52 0-82 8-86 23-4 18 34 47 105 79s171 66 279 93 210 44 289 49 125-2 130-21c4-16-22-38-72-64l1-3c37 19 79 46 74 68-3 10-16 18-40 22-14 2-31 3-50 3Z"
-            transform="translate(0 -52)"
-            style={{ fill: "#6c63ff" }}
+            id="ellipse1"
+            d="M97 230c-31 3-49 11-53 24s12 31 40 50c60 39 182 86 325 122 60 15 117 27 169 34l69 9c95 9 159 2 166-23 3-13-10-29-35-47a377 377 0 0 0-43-25"
+            transform="translate(-12)"
+            style={{
+              fill: "none",
+              stroke: "#6c63ff",
+              strokeMiterLimit: "10",
+              strokeWidth: "3px",
+            }}
+          />
+          <path
+            id="ellipse"
+            d="M744 355c40 10 63 22 63 37 1 13-17 27-49 39-23 9-53 18-89 25a1965 1965 0 0 1-530 22c-76-11-124-28-125-49-1-17 29-34 79-49"
+            transform="translate(-12)"
+            style={{
+              fill: "none",
+              stroke: "#6c63ff",
+              strokeMiterLimit: "10",
+              strokeWidth: "3px",
+            }}
           />
           <g id="smallGalax2">
             <circle cx="681.3" cy="182.3" r="34.4" style={{ fill: "#fff" }} />
@@ -170,12 +211,6 @@ function TextAnimation() {
             transform="translate(0 -52)"
             style={{ fill: "#6c63ff" }}
           />
-          <path
-            id="ellipse_2"
-            d="M240 569c-36 0-69-1-98-3-39-4-70-9-91-16-24-7-36-16-37-27-2-21 40-41 75-54l1 3c-49 18-74 35-73 50 2 20 48 34 125 41 79 6 184 4 294-7s213-29 290-51c74-21 116-44 114-64-1-15-33-28-89-36v-3c41 6 90 17 92 39 1 11-9 22-30 34s-49 22-87 33a2037 2037 0 0 1-486 61Z"
-            transform="translate(0 -52)"
-            style={{ fill: "#6c63ff" }}
-          />
           <circle
             id="smallGalax3"
             cx="529.4"
@@ -187,15 +222,15 @@ function TextAnimation() {
 
           <circle
             id="circle_1"
-            cx="87.4"
-            cy="228.9"
+            cx="74.9"
+            cy="228.8"
             r="17.5"
             style={{ fill: "#6c63ff" }}
           />
           <circle
             id="circle_2"
-            cx="838.1"
-            cy="382.4"
+            cx="734.2"
+            cy="354.7"
             r="17.5"
             style={{ fill: "#6c63ff" }}
           />

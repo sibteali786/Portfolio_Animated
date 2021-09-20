@@ -11,7 +11,6 @@ gsap.registerPlugin(MotionPathPlugin);
 
 function App() {
   const [loading, setloading] = useState(false);
-  const [offset, setOffset] = useState(0);
   const Textref = useRef(null);
   const deepRef = gsap.utils.selector(Textref);
   const ScreenLoadHandler = () => {
@@ -20,17 +19,6 @@ function App() {
       xPercent: -50,
       yPercent: -50,
       transformOrigin: "50% 50%",
-    });
-    tl.to(deepRef(".Text"), {
-      duration: 0.5,
-      scale: 0.7,
-      ease: "Power3.out",
-    });
-    tl.to(deepRef(".Text"), {
-      duration: 2,
-      opacity: 1,
-      scale: 1,
-      ease: "Power3.out",
     });
     tl.to(
       deepRef(".starSys"),
