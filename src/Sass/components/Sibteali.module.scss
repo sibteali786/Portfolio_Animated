@@ -1,3 +1,5 @@
+@import "../Util/config";
+
 .display {
   display: grid;
   grid-template-columns: 2fr 2fr;
@@ -7,7 +9,15 @@
     overflow: hidden;
   }
 }
-
+.container {
+  height: 100vh;
+  width: calc(100vw - 5em);
+  margin: 0 auto;
+  font-family: $pageFont;
+  font-weight: 600;
+  color: $fontColor;
+  background: url(../../Resources/svgexport-1.svg);
+}
 .text {
   text-align: left;
   text-justify: distribute;

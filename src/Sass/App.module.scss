@@ -30,6 +30,7 @@ body {
   background: url(../Resources/svgexport-1.svg);
 }
 nav {
+  font-family: $pageFont;
   display: flex;
   align-items: center;
   justify-content: space-between;

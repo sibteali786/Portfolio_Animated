@@ -4,6 +4,5 @@ import useWebAnimations, { fadeIn } from "@wellyshen/use-web-animations";
 export default About;
 
 function About() {
-  const { ref } = useWebAnimations({ ...fadeIn });
-  return <div ref={ref}>About Page</div>;
+  return <div>About Page</div>;
 }

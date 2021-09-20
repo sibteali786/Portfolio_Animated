@@ -1,10 +1,9 @@
 import styles from "./Sass/App.module.scss";
 import ClockLoader from "react-spinners/ClockLoader";
 import { useState, useEffect, useRef } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { SibtealiBaqar, Contact, Projects, About } from "./Pages";
-import { Button } from "./components";
-import { ReactComponent as ReactLogo } from "./Resources/logo_2.svg";
+import { Navbar } from "./components";
 import gsap from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
@@ -33,35 +32,15 @@ function App() {
       scale: 1,
       ease: "Power3.out",
     });
-    // tl.to(
-    //   deepRef("#smallGalax"),
-    //   {
-    //     duration: 1,
-    //     rotation: 360,
-    //     transformOrigin: "50% 50%",
-    //     ease: "Power.out",
-    //   },
-    //   "-=2"
-    // );
-    // tl.to(
-    //   deepRef("#smallGalax2"),
-    //   {
-    //     duration: 1,
-    //     rotation: 360,
-    //     transformOrigin: "50% 50%",
-    //     ease: "Power.out",
-    //   },
-    //   "-=2"
-    // );
-    // tl.from(
-    //   deepRef("#smallPlanets"),
-    //   {
-    //     duration: 1,
-    //     rotation: 360,
-    //     ease: "Power.out",
-    //   },
-    //   "-=3"
-    // );
+    tl.to(
+      deepRef(".starSys"),
+      {
+        duration: 3,
+        opacity: 1,
+        ease: "Power3.out",
+      },
+      "-=1"
+    );
     tl.from(
       deepRef(".nav"),
       {
@@ -105,52 +84,17 @@ function App() {
           <ClockLoader color={"#FCAB10"} loading={loading} size={150} />
         </div>
       ) : (
-        <div className={styles.container_1} ref={Textref}>
+        <div ref={Textref}>
           <Router>
-            <nav className={`nav`}>
-              <Link to="/" style={{ textDecoration: "none", zIndex: 120 }}>
-                <div
-                  style={{
-                    letterSpacing: "0.3rem",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    fontSize: "calc(5vw+1rem)",
-                    color: "#fffafb",
-                  }}
-                >
-                  <ReactLogo
-                    className={`logo`}
-                    style={{ marginRight: "0.5rem" }}
-                  />
-                  <p className={styles.Title}>ibteali Baqar</p>
-                </div>
-              </Link>
-              <Link to="contact" style={{ textDecoration: "none" }}>
-                <Button btnColor="#ee9b00" type="rounded">
-                  Contact
-                </Button>
-              </Link>
-              <ul style={{ fontSize: "calc(1.2vw + 0.3rem)" }}>
-                <Link to="projects">Projects</Link>
-                <Link to="about">About</Link>
-              </ul>
-              <div className={`${styles.MobileNav} ${styles.toggle}`}>
-                <div className={`list`}>
-                  <Link to="projects">Projects</Link>
-                  <Link to="about">About</Link>
-                  <Link to="contact">Contact</Link>
-                </div>
-              </div>
-            </nav>
-            <main>
-              <Routes>
-                <Route path="/" element={<SibtealiBaqar />} />
-                <Route path="about" element={<About />} />
-                <Route path="projects" element={<Projects />} />
-                <Route path="contact" element={<Contact />} />
-              </Routes>
-            </main>
+            <Navbar />
+            <Route exact path="/" component={SibtealiBaqar} />
+            <div className={styles.container_1}>
+              <Switch>
+                <Route exact path="/about" component={About} />
+                <Route exact path="/projects" component={Projects} />
+                <Route exact path="/contact" component={Contact} />
+              </Switch>
+            </div>
           </Router>
         </div>
       )}
