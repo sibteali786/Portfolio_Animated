@@ -15,20 +15,12 @@ function App() {
   const deepRef = gsap.utils.selector(Textref);
   const ScreenLoadHandler = () => {
     var tl = gsap.timeline();
-    tl.set(deepRef(".circle_1"), {
-      xPercent: -50,
-      yPercent: -50,
-      transformOrigin: "50% 50%",
+    tl.to(deepRef("#starSys"), {
+      delay: 2,
+      duration: 3,
+      opacity: 1,
+      ease: "Power3.out",
     });
-    tl.to(
-      deepRef(".starSys"),
-      {
-        duration: 3,
-        opacity: 1,
-        ease: "Power3.out",
-      },
-      "-=1"
-    );
     tl.from(
       deepRef(".nav"),
       {
@@ -36,7 +28,7 @@ function App() {
         y: -1000,
         ease: "Power3.out",
       },
-      "-=1"
+      "-=2"
     );
     tl.from(
       deepRef("#Ali"),
