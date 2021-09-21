@@ -2,11 +2,14 @@
 
 .display {
   display: grid;
-  grid-template-columns: 2fr 2fr;
+  grid-template-columns: 60% 40%;
   align-content: space-between;
   @media (max-width: 600px) {
     display: block;
     overflow: hidden;
+    .SvgHero {
+      display: none;
+    }
   }
 }
 .container {
@@ -22,15 +25,31 @@
   text-align: left;
   text-justify: distribute;
   letter-spacing: 0.3rem;
-  font-size: calc(3rem + 1vw);
+  font-size: calc(2rem);
   @media (max-width: 800px) {
-    font-size: calc(2.5rem + 1vw);
+    font-size: calc(1.5rem);
     letter-spacing: 0.3rem;
   }
   @media (max-width: 600px) {
-    font-size: calc(2rem + 1vw);
+    font-size: calc(2rem);
     letter-spacing: 0.1rem;
     padding: 0 20px;
+    text-align: center;
+  }
+  @media (max-width: 400px) {
+    font-size: 1rem;
+  }
+}
+.typeWritter {
+  font-size: 3.5rem;
+  @media (max-width: 800px) {
+    font-size: 2.5rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 2.5rem;
+  }
+  @media (max-width: 400px) {
+    font-size: 1.5rem;
   }
 }
 .font {
@@ -42,4 +61,46 @@
   height: auto;
   margin: 0 2rem;
   max-width: 100%;
+}
+
+.textGrad {
+  background: hsla(14, 87%, 47%, 1);
+
+  background: linear-gradient(
+    0deg,
+    hsla(14, 87%, 47%, 1) 0%,
+    hsla(303, 63%, 35%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    0deg,
+    hsla(14, 87%, 47%, 1) 0%,
+    hsla(303, 63%, 35%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    0deg,
+    hsla(14, 87%, 47%, 1) 0%,
+    hsla(303, 63%, 35%, 1) 100%
+  );
+
+  background-size: 100%;
+  text-transform: uppercase;
+  font-size: 4rem;
+  @media (max-width: 800px) {
+    font-size: 3rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 3rem;
+  }
+  @media (max-width: 400px) {
+    font-size: 2rem;
+  }
+}
+
+.gradientText {
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
 }

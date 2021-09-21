@@ -24,7 +24,7 @@ function TextAnimation() {
       ease: "Power3.out",
     });
     tl.to(DeepRef(".Text"), {
-      duration: 2,
+      duration: 1,
       opacity: 1,
       scale: 1,
       ease: "Power3.out",
@@ -77,18 +77,21 @@ function TextAnimation() {
           opacity: 0,
         }}
       >
-        <div>Hi! I'm Syed Sibteali Baqar I'm a</div>
-        <div style={{ color: "#fcab10" }}>
+        <div>I am </div>
+        <div className={`${styles.textGrad} ${styles.gradientText}`}>
+          Sibteali Baqar{" "}
+        </div>
+        <div style={{ color: "#6C63FF" }} className={`${styles.typeWritter}`}>
           <Typewriter
             options={{
               autoStart: true,
               loop: true,
-              cursor: "/",
+              cursor: ">",
             }}
             onInit={(typewriter) => {
               typewriter
 
-                .pauseFor(3000)
+                .pauseFor(1000)
                 .typeString(" Computer Engineer")
                 .pauseFor(500)
                 .deleteChars(17)
@@ -114,7 +117,7 @@ function TextAnimation() {
           />
         </div>
       </div>
-      <div>
+      <div className={`${styles.SvgHero}`}>
         <HeroSvg className={`${styles.heroImg}`} />
       </div>
     </div>
