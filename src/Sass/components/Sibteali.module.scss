@@ -25,32 +25,18 @@
   text-align: left;
   text-justify: distribute;
   letter-spacing: 0.3rem;
-  font-size: calc(2rem);
+  font-size: clamp(1.5rem, 3vw, 3rem);
   @media (max-width: 800px) {
-    font-size: calc(1.5rem);
     letter-spacing: 0.3rem;
   }
   @media (max-width: 600px) {
-    font-size: calc(2rem);
     letter-spacing: 0.1rem;
     padding: 0 20px;
     text-align: center;
   }
-  @media (max-width: 400px) {
-    font-size: 1rem;
-  }
 }
 .typeWritter {
-  font-size: 3.5rem;
-  @media (max-width: 800px) {
-    font-size: 2.5rem;
-  }
-  @media (max-width: 600px) {
-    font-size: 2.5rem;
-  }
-  @media (max-width: 400px) {
-    font-size: 1.5rem;
-  }
+  font-size: clamp(1.5rem, 5vw, 3.2rem);
 }
 .font {
   margin-top: calc(200px + 0.5rem);
@@ -86,16 +72,7 @@
 
   background-size: 100%;
   text-transform: uppercase;
-  font-size: 4rem;
-  @media (max-width: 800px) {
-    font-size: 3rem;
-  }
-  @media (max-width: 600px) {
-    font-size: 3rem;
-  }
-  @media (max-width: 400px) {
-    font-size: 2rem;
-  }
+  font-size: clamp(2.5rem, 7vw, 4rem);
 }
 
 .gradientText {
