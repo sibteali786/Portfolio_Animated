@@ -17,14 +17,14 @@ function App() {
     var tl = gsap.timeline();
     tl.to(deepRef("#starSys"), {
       delay: 2,
-      duration: 3,
+      duration: 1.2,
       opacity: 1,
       ease: "Power3.out",
     });
     tl.from(
       deepRef(".nav"),
       {
-        duration: 1,
+        duration: 1.5,
         y: -1000,
         ease: "Power3.out",
       },
