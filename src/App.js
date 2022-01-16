@@ -6,6 +6,7 @@ import { SibtealiBaqar, Contact, Projects, About } from "./Pages";
 import { Navbar } from "./components";
 import gsap from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import Footer from "./components/layout/Footer";
 
 gsap.registerPlugin(MotionPathPlugin);
 
@@ -68,6 +69,7 @@ function App() {
           <Router>
             <Navbar />
             <Route exact path="/" component={SibtealiBaqar} />
+            <Footer/>
             <div className={styles.container_1}>
               <Switch>
                 <Route exact path="/about" component={About} />

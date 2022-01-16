@@ -1,0 +1,17 @@
+.footer{
+    display:flex;
+    flex-flow: row;
+    justify-content: space-around;
+    background-color: #2b2b4e57;
+    height: 400px;
+    font-size: 50px;
+    color: #FFFFFF; 
+
+    p{
+        font-size: 20px;
+    }
+
+    a{
+        font-size: 20px;
+    }
+}
