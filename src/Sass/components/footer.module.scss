@@ -1,17 +1,24 @@
+@import "../Util/config";
+
 .footer{
     display:flex;
     flex-flow: row;
-    justify-content: space-around;
-    background-color: #2b2b4e57;
-    height: 400px;
+    padding:0 4rem;
+    margin-bottom: 3.4rem;
+    justify-content: space-between;
+    background-color: #02021E;
+    font-family: $pageFont;
     font-size: 50px;
     color: #FFFFFF; 
 
     p{
         font-size: 20px;
+        color: #a6a6c2;
     }
 
     a{
+        text-decoration: none;
+        color:#a6a6c2;
         font-size: 20px;
     }
 }
