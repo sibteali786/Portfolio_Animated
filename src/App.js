@@ -69,7 +69,7 @@ function App() {
           <Router>
             <Navbar />
             <Route exact path="/" component={SibtealiBaqar} />
-            <Footer/>
+            <Footer />
             <div className={styles.container_1}>
               <Switch>
                 <Route exact path="/about" component={About} />

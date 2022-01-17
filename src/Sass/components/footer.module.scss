@@ -2,14 +2,21 @@
 
 .footer{
     display:flex;
-    flex-flow: row;
-    padding:0 4rem;
-    margin-bottom: 3.4rem;
-    justify-content: space-between;
+    flex-flow: column;
+    
     background-color: #02021E;
     font-family: $pageFont;
     font-size: 50px;
     color: #FFFFFF; 
+
+    .knowAbouts{
+        display:flex;
+        flex-flow: row;
+        justify-content: space-between;
+        margin-bottom: 3.4rem;
+        padding:0 4rem;
+    }
+    
 
     p{
         font-size: 20px;
@@ -21,4 +28,33 @@
         color:#a6a6c2;
         font-size: 20px;
     }
+}
+
+
+.bottomLine{
+    display:flex;
+    flex-flow: row;
+    justify-content: space-between;
+    padding: 1rem 4rem;
+    position: relative;
+    &:before{
+        background: hsla(256,7%,44%,.5);
+        content: "";
+        height: 2px;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        
+        @media(min-width:767px){
+            left: 4rem;
+            right: 4rem;
+        }   
+    }
+
+    h6{
+        font-size: 1.5rem;
+    }
+
+    
 }
