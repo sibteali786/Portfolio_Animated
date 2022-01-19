@@ -71,7 +71,15 @@
         justify-content: center;
         align-items: center;
         width: max(3rem,2.5rem);
+        transition: all 0.3s ease-in-out;
+        &:hover{
+            background-color:#FFFFFF;
+            svg{
+                fill:black;
+            }
+        }
     }
+
 
     
 }

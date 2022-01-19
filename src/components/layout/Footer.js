@@ -5,6 +5,8 @@ import { ReactComponent as ReactLogo_2 } from "../../Resources/github.svg";
 import { ReactComponent as ReactLogo_3 } from "../../Resources/iconmonstr-facebook-4.svg";
 import { ReactComponent as ReactLogo_4 } from "../../Resources/iconmonstr-linkedin-3.svg";
 import { ReactComponent as ReactLogo_5 } from "../../Resources/iconmonstr-twitter-1.svg";
+import { ReactComponent as ReactLogo_6 } from "../../Resources/iconmonstr-stackoverflow-1.svg";
+import { ReactComponent as ReactLogo_7 } from "../../Resources/iconmonstr-medium-1.svg";
 function Footer() {
   return (
     <div className={`${styles.footer}`}>
@@ -66,6 +68,20 @@ function Footer() {
             rel="noreferrer"
           >
             <ReactLogo_5 className={`logo`} />
+          </a>
+          <a
+            href="https://stackoverflow.com/users/10695893/syed-sibteali-baqar"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <ReactLogo_6 className={`logo`} />
+          </a>
+          <a
+            href="https://medium.com/@sibteali786"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <ReactLogo_7 className={`logo`} />
           </a>
         </div>
       </div>
