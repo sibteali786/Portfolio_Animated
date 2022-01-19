@@ -30,7 +30,7 @@
     }
 }
 
-
+// Bottom social media icons and line above them 
 .bottomLine{
     display:flex;
     flex-flow: row;
@@ -40,7 +40,7 @@
     &:before{
         background: hsla(256,7%,44%,.5);
         content: "";
-        height: 2px;
+        height: 1px;
         left: 0;
         position: absolute;
         right: 0;
@@ -54,6 +54,23 @@
 
     h6{
         font-size: 1.5rem;
+    }
+    div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    a{
+        margin-right: 0.5rem;
+        border-radius: 100%;
+        border: 1px solid #FFFFFF;
+        display: flex;
+        height: max(3rem,2.5rem);
+        justify-content: center;
+        align-items: center;
+        width: max(3rem,2.5rem);
     }
 
     
