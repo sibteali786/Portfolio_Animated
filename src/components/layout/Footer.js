@@ -7,16 +7,26 @@ import { ReactComponent as ReactLogo_4 } from "../../Resources/iconmonstr-linked
 import { ReactComponent as ReactLogo_5 } from "../../Resources/iconmonstr-twitter-1.svg";
 import { ReactComponent as ReactLogo_6 } from "../../Resources/iconmonstr-stackoverflow-1.svg";
 import { ReactComponent as ReactLogo_7 } from "../../Resources/iconmonstr-medium-1.svg";
+import { Link } from "react-router-dom";
 function Footer() {
   return (
     <div className={`${styles.footer}`}>
       <div className={`${styles.knowAbouts}`}>
         <ReactLogo className={`logo`} />
-        <div>
+        <div className={`${styles.footerLinks}`}>
           <h6>Company</h6>
-          <p>Projects</p>
-          <p>About</p>
-          <p>Blog</p>
+          <p>
+            <Link to="projects">Projects</Link>
+          </p>
+          <p>
+            <Link to="about">About</Link>
+          </p>
+          <p>
+            <Link to="blog">Blog</Link>
+          </p>
+          <p>
+            <Link to="contacts">Contacts</Link>
+          </p>
         </div>
         <div>
           <h6>Services</h6>

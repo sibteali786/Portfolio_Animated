@@ -13,20 +13,28 @@
         display:flex;
         flex-flow: row;
         justify-content: space-between;
-        margin-bottom: 3.4rem;
+        margin-bottom: 3rem;
         padding:0 4rem;
+        letter-spacing: 0.05rem;
     }
     
 
     p{
-        font-size: 20px;
+        font-size: 1.1rem;
         color: #a6a6c2;
+        margin : 0.4rem 0;
+        
     }
-
+    h6{
+        font-size: 1.7rem;
+        letter-spacing: 0.08rem;
+        margin-bottom: 0.7rem;
+        font-weight: 600;
+    }
     a{
         text-decoration: none;
         color:#a6a6c2;
-        font-size: 20px;
+        font-size: 1.1rem;
     }
 }
 
@@ -53,7 +61,8 @@
     }
 
     h6{
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        font-weight: 300;
     }
     div{
         display: flex;
@@ -75,11 +84,21 @@
         &:hover{
             background-color:#FFFFFF;
             svg{
-                fill:black;
+                fill:blue;
             }
         }
     }
 
 
     
+}
+
+.footerLinks{
+
+    a{
+        transition: all 0.2s ease-in-out;
+        &:hover{
+            color: #FFFFFF;
+        }
+    }
 }
