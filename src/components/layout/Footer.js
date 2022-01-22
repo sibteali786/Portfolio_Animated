@@ -12,12 +12,18 @@ function Footer() {
   return (
     <footer>
       <div className={`${styles.footerUpper}`}>
-        <h2>Ready To discuss your projects</h2>
-        <p>
+        <h2 className={`${styles.bottomTitle}`}>
+          Ready to discuss
+          <br></br>
+          <span>your project?</span>
+        </h2>
+
+        <p className={`${styles.linkWrapper}`}>
           <a
             href="https://www.fiverr.com/users/sibtealibaqar12/seller_dashboard"
             target="_blank"
             rel="noreferrer"
+            className={`${styles.bottomContact}`}
           >
             Contact Us
           </a>
