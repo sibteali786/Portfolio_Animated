@@ -10,92 +10,106 @@ import { ReactComponent as ReactLogo_7 } from "../../Resources/iconmonstr-medium
 import { Link } from "react-router-dom";
 function Footer() {
   return (
-    <div className={`${styles.footer}`}>
-      <div className={`${styles.knowAbouts}`}>
-        <ReactLogo className={`logo`} />
-        <div className={`${styles.footerLinks}`}>
-          <h6>Company</h6>
-          <p>
-            <Link to="projects">Projects</Link>
-          </p>
-          <p>
-            <Link to="about">About</Link>
-          </p>
-          <p>
-            <Link to="blog">Blog</Link>
-          </p>
-          <p>
-            <Link to="contacts">Contacts</Link>
-          </p>
-        </div>
-        <div>
-          <h6>Services</h6>
-          <p>Web Design</p>
-          <p>MERN Stack Web Development</p>
-          <p>Serverless</p>
-          <p>ReactJS Development</p>
-          <p>Responsive Web Design</p>
-          <p>NodeJS Development</p>
-        </div>
-        <div>
-          <h6>Contact</h6>
-          <p>
-            <a href="">Sibteali786@gmail.com</a>
-          </p>
-          <p>
-            <a href="">ssibteali.ce41ceme@ce.ceme.edu.pk</a>
-          </p>
-        </div>
+    <footer>
+      <div className={`${styles.footerUpper}`}>
+        <h2>Ready To discuss your projects</h2>
+        <p>
+          <a
+            href="https://www.fiverr.com/users/sibtealibaqar12/seller_dashboard"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Contact Us
+          </a>
+        </p>
       </div>
+      <div className={`${styles.footer}`}>
+        <div className={`${styles.knowAbouts}`}>
+          <ReactLogo className={`logo`} />
+          <div className={`${styles.footerLinks}`}>
+            <h6>Company</h6>
+            <p>
+              <Link to="projects">Projects</Link>
+            </p>
+            <p>
+              <Link to="about">About</Link>
+            </p>
+            <p>
+              <Link to="blog">Blog</Link>
+            </p>
+            <p>
+              <Link to="contacts">Contacts</Link>
+            </p>
+          </div>
+          <div>
+            <h6>Services</h6>
+            <p>Web Design</p>
+            <p>MERN Stack Web Development</p>
+            <p>Serverless</p>
+            <p>ReactJS Development</p>
+            <p>Responsive Web Design</p>
+            <p>NodeJS Development</p>
+          </div>
+          <div>
+            <h6>Contact</h6>
+            <p>
+              <a href="">Sibteali786@gmail.com</a>
+            </p>
+            <p>
+              <a href="">ssibteali.ce41ceme@ce.ceme.edu.pk</a>
+            </p>
+          </div>
+        </div>
 
-      <div className={`${styles.bottomLine}`}>
-        <h6>Resistech</h6>
-        <div>
-          <a
-            href="https://github.com/sibteali786"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <ReactLogo_2 className={`logo`} />
-          </a>
-          <a
-            href="https://www.facebook.com/sibte.ali.923/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <ReactLogo_3 className={`logo`} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/syed-sibteali-baqar-03167a17a/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <ReactLogo_4 className={`logo`} />
-          </a>
-          <a
-            href="https://twitter.com/SibtealiN"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <ReactLogo_5 className={`logo`} />
-          </a>
-          <a
-            href="https://stackoverflow.com/users/10695893/syed-sibteali-baqar"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <ReactLogo_6 className={`logo`} />
-          </a>
-          <a
-            href="https://medium.com/@sibteali786"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <ReactLogo_7 className={`logo`} />
-          </a>
+        <div className={`${styles.bottomLine}`}>
+          <h6>Resistech</h6>
+          <div>
+            <a
+              href="https://github.com/sibteali786"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <ReactLogo_2 className={`logo`} />
+            </a>
+            <a
+              href="https://www.facebook.com/sibte.ali.923/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <ReactLogo_3 className={`logo`} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/syed-sibteali-baqar-03167a17a/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <ReactLogo_4 className={`logo`} />
+            </a>
+            <a
+              href="https://twitter.com/SibtealiN"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <ReactLogo_5 className={`logo`} />
+            </a>
+            <a
+              href="https://stackoverflow.com/users/10695893/syed-sibteali-baqar"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <ReactLogo_6 className={`logo`} />
+            </a>
+            <a
+              href="https://medium.com/@sibteali786"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <ReactLogo_7 className={`logo`} />
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
 
