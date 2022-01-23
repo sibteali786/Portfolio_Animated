@@ -1,6 +1,33 @@
 @import "../Util/config";
 
 .footer{
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+    position: relative;
+
+    
+
+    &:before{
+        bottom: 0;
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        transform: translateY(calc(0 ));
+        will-change: transform;
+        z-index: -1;
+    }
+
+}
+.footerColored{
+    min-height: 100vh;
+    &:before{
+        background: #3719CA;
+    }
+}
+.bottomSection{
     display:flex;
     flex-flow: column;
     

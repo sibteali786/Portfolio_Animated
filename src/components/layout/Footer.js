@@ -12,7 +12,7 @@ function Footer() {
   const [hovered, setHovered] = useState(false);
   const toggleHover = () => setHovered(!hovered);
   return (
-    <footer>
+    <footer className={`${styles.footer} ${styles.footerColored}`}>
       <div
         className={
           hovered
@@ -39,7 +39,7 @@ function Footer() {
           </a>
         </p>
       </div>
-      <div className={`${styles.footer}`}>
+      <div className={`${styles.bottomSection}`}>
         <div className={`${styles.knowAbouts}`}>
           <ReactLogo className={`logo`} />
           <div className={`${styles.footerLinks}`}>
