@@ -111,6 +111,7 @@
     padding: 9.5rem 0;
     position: relative;
     color:$white-color;
+    
     &:before{
         background: linear-gradient(258.52deg,#3719ca -132.34%,rgba(55,25,202,0) 22.57%),linear-gradient(.788turn,hsla(17,68%,75%,0) 45.54%,hsla(17,68%,75%,.19) 130.68%),linear-gradient(3.27deg
         ,$xiketic-color 13.68%,#262147 142.62%);
@@ -204,7 +205,9 @@
             position: relative;
             text-transform: uppercase;
             z-index: 2;
-
+            &:hover:after{
+                transform:scaleY(1);
+            }
             &:after{
                 background: $medium-blue-color;
                 bottom: 0;
@@ -218,9 +221,19 @@
                 transition: transform .3s ease-in-out;
                 width: 110%;
                 z-index: -1;
+
+                
             }
         }
     }
 
+    
+}
+
+.footerUpper.hovered{
+    
+    &:before{
+        transform : translate(-50%,-50%) scale(1.07);
+    }
     
 }

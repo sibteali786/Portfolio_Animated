@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../Sass/components/footer.module.scss";
 import { ReactComponent as ReactLogo } from "../../Resources/logo_2.svg";
 import { ReactComponent as ReactLogo_2 } from "../../Resources/github.svg";
@@ -9,9 +9,17 @@ import { ReactComponent as ReactLogo_6 } from "../../Resources/iconmonstr-stacko
 import { ReactComponent as ReactLogo_7 } from "../../Resources/iconmonstr-medium-1.svg";
 import { Link } from "react-router-dom";
 function Footer() {
+  const [hovered, setHovered] = useState(false);
+  const toggleHover = () => setHovered(!hovered);
   return (
     <footer>
-      <div className={`${styles.footerUpper}`}>
+      <div
+        className={
+          hovered
+            ? `${styles.footerUpper} ${styles.hovered}`
+            : ` ${styles.footerUpper}`
+        }
+      >
         <h2 className={`${styles.bottomTitle}`}>
           Ready to discuss
           <br></br>
@@ -24,6 +32,8 @@ function Footer() {
             target="_blank"
             rel="noreferrer"
             className={`${styles.bottomContact}`}
+            onMouseEnter={toggleHover}
+            onMouseLeave={toggleHover}
           >
             Contact Us
           </a>
