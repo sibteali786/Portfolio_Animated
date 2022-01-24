@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 import styles from "../../Sass/components/footer.module.scss";
 import { ReactComponent as ReactLogo } from "../../Resources/logo_2.svg";
 import { ReactComponent as ReactLogo_2 } from "../../Resources/github.svg";
@@ -11,8 +11,39 @@ import { Link } from "react-router-dom";
 function Footer() {
   const [hovered, setHovered] = useState(false);
   const toggleHover = () => setHovered(!hovered);
+  const targetRef = useRef(null);
+  const [isVisible, setisVisible] = useState("0.5");
+  const callBackFunction = (entries) => {
+    const [entry] = entries;
+    var val = isVisible;
+    val = parseInt(isVisible);
+    const count = "0.1";
+    // setisVisible(isVisible + parseInt(count));
+    console.log(entry);
+  };
+
+  const options = useMemo(() => {
+    return {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1,
+    };
+  });
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(callBackFunction, options);
+    const currentTarget = targetRef.current;
+    if (currentTarget) observer.observe(currentTarget);
+
+    return () => {
+      if (currentTarget) observer.unobserve(currentTarget);
+    };
+  }, [targetRef, options]);
   return (
-    <footer className={`${styles.footer} ${styles.footerColored}`}>
+    <footer
+      className={`${styles.footer} ${styles.footerColored}`}
+      ref={targetRef}
+    >
       <div
         className={
           hovered
