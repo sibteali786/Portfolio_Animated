@@ -1,21 +1,23 @@
 @import "../Util/config";
-
+$shiftDistance:80%;
+:export{
+    shiftDistance: $shiftDistance;
+}
 .footer{
     display: flex;
     flex-direction: column;
     overflow-y: hidden;
     position: relative;
-
     
 
     &:before{
         bottom: 0;
         content: "";
-        height: 100%;
+        height: $shiftDistance;
         left: 0;
         position: absolute;
         right: 0;
-        transform: translateY(calc(0 ));
+        transform: translateY(calc(50% - var(--shiftDistance)));
         will-change: transform;
         z-index: -1;
     }

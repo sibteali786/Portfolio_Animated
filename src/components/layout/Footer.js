@@ -8,18 +8,20 @@ import { ReactComponent as ReactLogo_5 } from "../../Resources/iconmonstr-twitte
 import { ReactComponent as ReactLogo_6 } from "../../Resources/iconmonstr-stackoverflow-1.svg";
 import { ReactComponent as ReactLogo_7 } from "../../Resources/iconmonstr-medium-1.svg";
 import { Link } from "react-router-dom";
+import variables from "../../Sass/components/footer.module.scss";
 function Footer() {
   const [hovered, setHovered] = useState(false);
   const toggleHover = () => setHovered(!hovered);
   const targetRef = useRef(null);
-  const [isVisible, setisVisible] = useState("0.5");
+  // const [isVisible, setisVisible] = useState("0.5");
   const callBackFunction = (entries) => {
     const [entry] = entries;
-    var val = isVisible;
-    val = parseInt(isVisible);
-    const count = "0.1";
-    // setisVisible(isVisible + parseInt(count));
-    console.log(entry);
+    var distance = variables.shiftDistance;
+    distance = "30%";
+
+    document
+      .getElementsByTagName("footer")[0]
+      .style.setProperty("--shiftDistance", distance);
   };
 
   const options = useMemo(() => {
