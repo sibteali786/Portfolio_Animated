@@ -16,12 +16,14 @@ function Footer() {
   // const [isVisible, setisVisible] = useState("0.5");
   const callBackFunction = (entries) => {
     const [entry] = entries;
-    var distance = variables.shiftDistance;
-    distance = "30%";
-
+    var distance = parseInt(variables.shiftDistance) / 100;
+    console.log(distance);
+    distance += 0.2;
+    distance *= 100;
+    console.log(distance);
     document
       .getElementsByTagName("footer")[0]
-      .style.setProperty("--shiftDistance", distance);
+      .style.setProperty("--shiftDistance", distance + "%");
   };
 
   const options = useMemo(() => {

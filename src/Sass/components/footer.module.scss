@@ -1,5 +1,5 @@
 @import "../Util/config";
-$shiftDistance:80%;
+$shiftDistance:10%;
 :export{
     shiftDistance: $shiftDistance;
 }
@@ -13,7 +13,7 @@ $shiftDistance:80%;
     &:before{
         bottom: 0;
         content: "";
-        height: $shiftDistance;
+        height: 100%;
         left: 0;
         position: absolute;
         right: 0;
