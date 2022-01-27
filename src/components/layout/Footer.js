@@ -13,17 +13,14 @@ function Footer() {
   const [hovered, setHovered] = useState(false);
   const toggleHover = () => setHovered(!hovered);
   const targetRef = useRef(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const handleScroll = () => {
+    const position = window.scrollY;
+    setScrollPosition(position);
+  };
   // const [isVisible, setisVisible] = useState("0.5");
   const callBackFunction = (entries) => {
     const [entry] = entries;
-    var distance = parseInt(variables.shiftDistance) / 100;
-    console.log(distance);
-    distance += 0.2;
-    distance *= 100;
-    console.log(distance);
-    document
-      .getElementsByTagName("footer")[0]
-      .style.setProperty("--shiftDistance", distance + "%");
   };
 
   const options = useMemo(() => {
@@ -35,11 +32,22 @@ function Footer() {
   });
 
   useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    console.log(scrollPosition);
     const observer = new IntersectionObserver(callBackFunction, options);
     const currentTarget = targetRef.current;
-    if (currentTarget) observer.observe(currentTarget);
+    if (currentTarget) {
+      observer.observe(currentTarget);
+      var distance = parseInt(variables.shiftDistance) / 100;
+      distance = (distance + scrollPosition / 100) * 7;
+      console.log(distance);
+      document
+        .getElementsByTagName("footer")[0]
+        .style.setProperty("--shiftDistance", distance + "%");
+    }
 
     return () => {
+      window.removeEventListener("scroll", handleScroll);
       if (currentTarget) observer.unobserve(currentTarget);
     };
   }, [targetRef, options]);
