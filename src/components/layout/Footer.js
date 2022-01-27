@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import variables from "../../Sass/components/footer.module.scss";
 function Footer() {
   const [hovered, setHovered] = useState(false);
+  const [isVisible, setisVisible] = useState(false);
   const toggleHover = () => setHovered(!hovered);
   const targetRef = useRef(null);
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -21,6 +22,7 @@ function Footer() {
   // const [isVisible, setisVisible] = useState("0.5");
   const callBackFunction = (entries) => {
     const [entry] = entries;
+    setisVisible(entry.isIntersecting);
   };
 
   const options = useMemo(() => {
@@ -38,8 +40,10 @@ function Footer() {
     const currentTarget = targetRef.current;
     if (currentTarget) {
       observer.observe(currentTarget);
+    }
+    if (isVisible) {
       var distance = parseInt(variables.shiftDistance) / 100;
-      distance = (distance + scrollPosition / 100) * 7;
+      distance = (distance + scrollPosition / 100) * 5;
       console.log(distance);
       document
         .getElementsByTagName("footer")[0]
