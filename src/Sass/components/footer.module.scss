@@ -1,5 +1,5 @@
 @import "../Util/config";
-$shiftDistance:0%;
+$shiftDistance:5%;
 :export{
     shiftDistance: $shiftDistance;
 }
@@ -17,7 +17,7 @@ $shiftDistance:0%;
         left: 0;
         position: absolute;
         right: 0;
-        transform: translateY(calc(50% - var(--shiftDistance)));
+        transform: translateY(calc(50% - var(--shiftDistance,0px)));
         will-change: transform;
         z-index: -1;
     }
@@ -156,8 +156,8 @@ $shiftDistance:0%;
         width: max(15.625rem,24rem);
 
         @media(min-width:1023px){
-            height: 20rem;
-            width: 20rem;
+            height: 26rem;
+            width: 26rem;
         }
 
         @media (min-width:767px){
@@ -190,7 +190,7 @@ $shiftDistance:0%;
         font-weight: 700;
         text-align: center;
         @media(min-width:767px){
-            font-size: 4.8rem;
+            font-size: 6.4rem;
             letter-spacing: -2px;
         }
 
