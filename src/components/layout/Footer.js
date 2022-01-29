@@ -28,8 +28,8 @@ function Footer() {
   const options = useMemo(() => {
     return {
       root: null,
-      rootMargin: "100px",
-      threshold: 0.1,
+      rootMargin: "300px",
+      threshold: 0,
     };
   });
 
@@ -43,7 +43,7 @@ function Footer() {
     }
     if (isVisible) {
       var distance = parseInt(variables.shiftDistance) / 100;
-      distance = (distance + scrollPosition / 100) * 7;
+      distance = (distance + scrollPosition / 100) * 5;
       console.log(distance);
       document
         .getElementsByTagName("footer")[0]

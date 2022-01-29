@@ -1,5 +1,5 @@
 @import "../Util/config";
-$shiftDistance:5%;
+$shiftDistance:0%;
 :export{
     shiftDistance: $shiftDistance;
 }
@@ -49,7 +49,8 @@ $shiftDistance:5%;
     
 
     p{
-        font-size: 1.1rem;
+        font-size: 1.3rem;
+        letter-spacing: 0.15rem;
         color: #a6a6c2;
         margin : 0.4rem 0;
         
@@ -63,7 +64,8 @@ $shiftDistance:5%;
     a{
         text-decoration: none;
         color:#a6a6c2;
-        font-size: 1.1rem;
+        font-size: 1.3rem;
+        letter-spacing: 0.2rem;
     }
 }
 
