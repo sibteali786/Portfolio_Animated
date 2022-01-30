@@ -59,3 +59,21 @@
     background-image: $text-gradient;
     color: transparent;
 }
+
+.project-item {
+    --margin-bottom-units-count: 5;
+    margin-bottom: calc(var(--margin-bottom-units-count)*var(--unit));
+
+    @media (min-width: 767px)
+    {
+        align-items: center;
+        display: flex;
+        &:not(:last-child){
+            --margin-bottom-units-count: 8;
+        }
+        &:nth-of-type(odd) {
+            flex-direction: row-reverse;
+        }
+    }
+}
+
