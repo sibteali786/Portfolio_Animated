@@ -12,6 +12,10 @@ function Projects() {
           >
             Projects
           </h1>
+          <div className={`${styles.projectItem}`}>
+            <div className={`${styles.projectItemImage}`}></div>
+            <div className={`${styles.projectItemText}`}></div>
+          </div>
         </section>
       </main>
     </div>
