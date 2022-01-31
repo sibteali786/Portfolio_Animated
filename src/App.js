@@ -1,7 +1,7 @@
 import styles from "./Sass/App.module.scss";
 import ClockLoader from "react-spinners/ClockLoader";
 import { useState, useEffect, useRef } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { SibtealiBaqar, Contact, Projects, About } from "./Pages";
 import { Navbar } from "./components";
 import gsap from "gsap";
