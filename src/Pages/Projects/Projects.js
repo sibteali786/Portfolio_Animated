@@ -7,21 +7,33 @@ function Projects() {
   const [language, setLanguage] = useState("");
   const URL = `https://api.github.com/users/sibteali786/starred`;
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(async () => {
-    const res = await fetch(URL);
-    const data = await res.json();
-    setRepos(data);
+  useEffect(() => {
+    const FetchURL = async () => {
+      const res = await fetch(URL);
+      const data = await res.json();
+      //get languages based on repo url
+      const languagesURL = data[0].languages_url;
+      const resLanguage = await fetch(languagesURL);
+      const dataLanguage = await resLanguage.json();
+      console.log("resLanguage: ", dataLanguage);
+      setRepos(data);
+      console.log("Data: ", data);
+
+      console.log("languages: ", data[0].languages_url);
+      const fetchData = data.language_url;
+    };
+    FetchURL();
+    langFunc(repos);
   }, []);
 
   const langFunc = (repos) => {
-    repos.map(async (repo) => {
-      const URL = repo.language_url;
-      const res = await fetch(URL);
-      const lang = await res.json();
-      setLanguage(lang);
+    const result = repos.map(async (repo) => {
+      const he = repo.language_url;
+      // const URL = repo.language_url;
+      // const res = await fetch(URL);
+      // setLanguage(lang);
     });
   };
-  langFunc();
   return (
     <div className={`${styles.illuminationTop}  ${styles.illuminationTopLeft}`}>
       <main>
