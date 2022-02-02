@@ -3,15 +3,25 @@ import styles from "../../Sass/components/projects.module.scss";
 export default Projects;
 
 function Projects() {
-  const [repos, setrepos] = useState([]);
+  const [repos, setRepos] = useState([]);
+  const [language, setLanguage] = useState("");
   const URL = `https://api.github.com/users/sibteali786/starred`;
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
     const res = await fetch(URL);
     const data = await res.json();
-    console.log(data);
-    setrepos(data);
+    setRepos(data);
   }, []);
+
+  const langFunc = (repos) => {
+    repos.map(async (repo) => {
+      const URL = repo.language_url;
+      const res = await fetch(URL);
+      const lang = await res.json();
+      setLanguage(lang);
+    });
+  };
+  langFunc();
   return (
     <div className={`${styles.illuminationTop}  ${styles.illuminationTopLeft}`}>
       <main>
@@ -29,15 +39,7 @@ function Projects() {
                   <p>{repo.description}</p>
                   <h3>{repo.full_name}</h3>
                   <a href={repo.url}>view project</a>
-                  <div>
-                    <a
-                      href={repo.languages_url}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Languages
-                    </a>
-                  </div>
+                  <div></div>
                 </div>
               ))}
             </div>
