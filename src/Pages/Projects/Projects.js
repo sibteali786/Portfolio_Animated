@@ -4,36 +4,34 @@ export default Projects;
 
 function Projects() {
   const [repos, setRepos] = useState([]);
-  const [language, setLanguage] = useState("");
+  const [language, setLanguage] = useState({});
   const URL = `https://api.github.com/users/sibteali786/starred`;
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const FetchURL = async () => {
       const res = await fetch(URL);
       const data = await res.json();
+      setRepos(data);
       //get languages based on repo url
+      const languagesRepos = data.map(async (repo) => {
+        const res = await fetch(repo.languages_url);
+        const data = await res.json();
+        console.log(data);
+      });
+      // const fullName = data.map((repo) => repo.full_name);
+      // languagesRepos.forEach(async (lang) => {
+      //   console.log(data);
+      // });
       const languagesURL = data[0].languages_url;
       const resLanguage = await fetch(languagesURL);
       const dataLanguage = await resLanguage.json();
-      console.log("resLanguage: ", dataLanguage);
-      setRepos(data);
-      console.log("Data: ", data);
-
-      console.log("languages: ", data[0].languages_url);
-      const fetchData = data.language_url;
+      console.log(dataLanguage);
+      // setLanguage(dataLanguage);
+      // console.log("languages: ", data[0].languages_url);
+      // const fetchData = data.language_url;
     };
     FetchURL();
-    langFunc(repos);
   }, []);
-
-  const langFunc = (repos) => {
-    const result = repos.map(async (repo) => {
-      const he = repo.language_url;
-      // const URL = repo.language_url;
-      // const res = await fetch(URL);
-      // setLanguage(lang);
-    });
-  };
   return (
     <div className={`${styles.illuminationTop}  ${styles.illuminationTopLeft}`}>
       <main>
@@ -51,7 +49,7 @@ function Projects() {
                   <p>{repo.description}</p>
                   <h3>{repo.full_name}</h3>
                   <a href={repo.url}>view project</a>
-                  <div></div>
+                  <div>{}</div>
                 </div>
               ))}
             </div>
