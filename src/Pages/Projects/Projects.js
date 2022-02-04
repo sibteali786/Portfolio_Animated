@@ -4,7 +4,7 @@ export default Projects;
 
 function Projects() {
   const [repos, setRepos] = useState([]);
-  const [language, setLanguage] = useState({});
+  const [language, setLanguage] = useState();
   const URL = `https://api.github.com/users/sibteali786/starred`;
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
@@ -12,23 +12,14 @@ function Projects() {
       const res = await fetch(URL);
       const data = await res.json();
       setRepos(data);
+      var result = {};
       //get languages based on repo url
       const languagesRepos = data.map(async (repo) => {
         const res = await fetch(repo.languages_url);
         const data = await res.json();
-        console.log(data);
+        result[repo.name] = data;
       });
-      // const fullName = data.map((repo) => repo.full_name);
-      // languagesRepos.forEach(async (lang) => {
-      //   console.log(data);
-      // });
-      const languagesURL = data[0].languages_url;
-      const resLanguage = await fetch(languagesURL);
-      const dataLanguage = await resLanguage.json();
-      console.log(dataLanguage);
-      // setLanguage(dataLanguage);
-      // console.log("languages: ", data[0].languages_url);
-      // const fetchData = data.language_url;
+      setLanguage(result);
     };
     FetchURL();
   }, []);
