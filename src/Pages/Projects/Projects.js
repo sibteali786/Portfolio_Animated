@@ -4,8 +4,9 @@ export default Projects;
 
 function Projects() {
   const [repos, setRepos] = useState([]);
-  const [language, setLanguage] = useState();
+  const [language, setLanguage] = useState([]);
   const URL = `https://api.github.com/users/sibteali786/starred`;
+  const [loading, setloading] = useState(false);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const FetchURL = async () => {
@@ -20,9 +21,11 @@ function Projects() {
         result[repo.name] = data;
       });
       setLanguage(result);
+      setloading(false);
     };
     FetchURL();
   }, []);
+
   return (
     <div className={`${styles.illuminationTop}  ${styles.illuminationTopLeft}`}>
       <main>
@@ -40,7 +43,9 @@ function Projects() {
                   <p>{repo.description}</p>
                   <h3>{repo.full_name}</h3>
                   <a href={repo.url}>view project</a>
-                  <div>{}</div>
+                  <div>
+                    {!loading ? console.log(language) : <div>No Data</div>}
+                  </div>
                 </div>
               ))}
             </div>

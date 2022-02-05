@@ -73,7 +73,11 @@ function App() {
             <div className={styles.container_1}>
               <Switch>
                 <Route exact path="/about" component={About} />
-                <Route exact path="/projects" component={Projects} />
+                <Route
+                  exact
+                  path="/projects"
+                  component={() => <Projects loading={loading} />}
+                />
                 <Route exact path="/contact" component={Contact} />
               </Switch>
             </div>
