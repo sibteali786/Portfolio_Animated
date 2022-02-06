@@ -40,10 +40,17 @@ function Projects() {
             <div className={`${styles.projectItemText}`}>
               {repos.map((repo) => (
                 <div key={repo.id}>
-                  <p>{repo.description}</p>
-                  <h3>{repo.full_name}</h3>
-                  <a href={repo.url}>view project</a>
-                  <div>
+                  <p className={`${styles.projectTags}`}>{repo.description}</p>
+                  <h3 className={`${styles.projectTitle} ${styles.blackText} `}>
+                    {repo.full_name}
+                  </h3>
+                  <a
+                    href={repo.url}
+                    className={`${styles.underlinedText} ${styles.viewButton} `}
+                  >
+                    view project
+                  </a>
+                  <div className={`${styles.projectTechnologies} `}>
                     {!loading ? console.log(language) : <div>No Data</div>}
                   </div>
                 </div>
