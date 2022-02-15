@@ -101,6 +101,15 @@
             content: "";
             display: block
         }
+
+        img{
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: transform .25s cubic-bezier(.22,.81,.49,1.01);
+        }
     }
 }
 
@@ -194,4 +203,12 @@
     &:hover:after{
         width:100%;
     }
+}
+
+img{
+    height: auto;
+    max-width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
 }

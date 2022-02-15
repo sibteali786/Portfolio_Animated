@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "../../Sass/components/projects.module.scss";
+import file from "../../Resources/URL.json";
 export default Projects;
 
 function Projects() {
@@ -37,9 +38,12 @@ function Projects() {
           </h1>
           <div className={`${styles.projectItem}`}>
             <div className={`${styles.projectItemImage}`}>
-              {repos.map((repo) => (
-                <a href={repo.url} className={`${styles.imageContainer}`}>
-                  <img href="" loading="lazy" alt={repo.name}></img>
+              {file.map((arr) => (
+                <a href="">
+                  <picture>
+                    <source srcset={arr.url1}></source>
+                    <img src={require("../../Resources/covid19.png").default} />
+                  </picture>
                 </a>
               ))}
             </div>
