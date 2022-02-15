@@ -36,13 +36,22 @@ function Projects() {
             Projects
           </h1>
           <div className={`${styles.projectItem}`}>
-            <div className={`${styles.projectItemImage}`}></div>
+            <div className={`${styles.projectItemImage}`}>
+              {repos.map((repo) => (
+                <a href={repo.url} className={`${styles.imageContainer}`}>
+                  <img href="" loading="lazy" alt={repo.name}></img>
+                </a>
+              ))}
+            </div>
             <div className={`${styles.projectItemText}`}>
               {repos.map((repo) => (
                 <div key={repo.id}>
                   <p className={`${styles.projectTags}`}>{repo.description}</p>
-                  <h3 className={`${styles.projectTitle} ${styles.blackText} `}>
-                    {repo.full_name}
+                  <h3
+                    className={`${styles.projectTitle} ${styles.blackText} `}
+                    style={{ textTransform: "uppercase" }}
+                  >
+                    {repo.name}
                   </h3>
                   <a
                     href={repo.url}
