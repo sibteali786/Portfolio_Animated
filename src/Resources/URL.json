@@ -11,7 +11,11 @@
         "./../Resources/Robber.png",
         "./../Resources/shoeStore.png",
         "./../Resources/Expense.png"
+    ],
+    "authToken":[
+        "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"
     ]
+
 
 
 
