@@ -25,9 +25,10 @@ function Projects() {
       const data = await res.json();
       setRepos(data);
       var result = {};
-      var contents = {};
       //get languages based on repo url
-      const languagesRepos = data.map(async (repo) => {
+      const arr = [];
+      var n = 0;
+      data.map(async (repo) => {
         const res = await fetch(repo.languages_url, {
           method: "GET",
           headers: headers,
@@ -41,12 +42,14 @@ function Projects() {
         );
         const data = await res.json();
         const dataCont = await resCont.json();
-        console.log(dataCont.map((data) => console.log(data.download_url)));
         result[repo.name] = data;
-        contents[repo.name] = dataCont;
+        dataCont.map((data) => {
+          arr[n] = data.download_url;
+          n = n + 1;
+        });
       });
+      setContents(arr.sort());
       setLanguage(result);
-      setContents(contents);
       setloading(false);
     };
     FetchURL();
@@ -63,13 +66,17 @@ function Projects() {
           </h1>
           <div className={`${styles.projectItem}`}>
             <div className={`${styles.projectItemImage}`}>
-              {file.url.map(
-                (arr, index) => console.log(arr)
-                // <picture>
-                //   <source srcset={arr}></source>
-                //   <img src={require("." + imgRef[index]).default} alt="Repos" />
-                // </picture>
-              )}
+              {file.url.map((arr, index) => (
+                <picture>
+                  <source
+                    type="image/png"
+                    data-srcset={arr}
+                    srcSet={arr}
+                    sizes="512px"
+                  />
+                  <img src={contents[index]} alt="Repos" />
+                </picture>
+              ))}
             </div>
             <div className={`${styles.projectItemText}`}>
               {repos.map((repo) => (
@@ -88,7 +95,7 @@ function Projects() {
                     view project
                   </a>
                   <div className={`${styles.projectTechnologies} `}>
-                    {!loading ? console.log(language) : <div>No Data</div>}
+                    {/* {!loading ? console.log(language) : <div>No Data</div>} */}
                   </div>
                 </div>
               ))}

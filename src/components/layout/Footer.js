@@ -35,7 +35,6 @@ function Footer() {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    console.log(scrollPosition);
     const observer = new IntersectionObserver(callBackFunction, options);
     const currentTarget = targetRef.current;
     if (currentTarget) {
@@ -44,7 +43,6 @@ function Footer() {
     if (isVisible) {
       var distance = parseInt(variables.shiftDistance) / 100;
       distance = (distance + scrollPosition / 100) * 5;
-      console.log(distance);
       document
         .getElementsByTagName("footer")[0]
         .style.setProperty("--shiftDistance", distance + "%");
