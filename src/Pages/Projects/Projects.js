@@ -6,7 +6,7 @@ export default Projects;
 function Projects() {
   const imgRef = file.imgUrls;
   const headers = {
-    Authorization: `Token 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`,
+    Authorization: `Token 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`,
   };
   const [repos, setRepos] = useState([]);
   const [language, setLanguage] = useState([]);
