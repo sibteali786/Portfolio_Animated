@@ -5,8 +5,10 @@ export default Projects;
 
 function Projects() {
   const imgRef = file.imgUrls;
+  const username = "sibteali786";
+  const password = "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";
   const headers = {
-    Authorization: `Token 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`,
+    Authorization: `Basic ${`${username}:${password}`.toString("base64")}`,
   };
   const [repos, setRepos] = useState([]);
   const [language, setLanguage] = useState([]);
@@ -21,7 +23,6 @@ function Projects() {
         headers: headers,
       });
       const data = await res.json();
-      console.log(data);
       setRepos(data);
       var result = {};
       var contents = {};
@@ -31,12 +32,16 @@ function Projects() {
           method: "GET",
           headers: headers,
         });
-        const resCont = await fetch(repo.contents_url.replace("/{+path}", ""), {
-          method: "GET",
-          headers: headers,
-        });
+        const resCont = await fetch(
+          repo.contents_url.replace("/{+path}", "/Images"),
+          {
+            method: "GET",
+            headers: headers,
+          }
+        );
         const data = await res.json();
         const dataCont = await resCont.json();
+        console.log(dataCont.map((data) => console.log(data.download_url)));
         result[repo.name] = data;
         contents[repo.name] = dataCont;
       });
@@ -67,31 +72,26 @@ function Projects() {
               )}
             </div>
             <div className={`${styles.projectItemText}`}>
-              {!loading
-                ? console.log(contents)
-                : repos.map(
-                    (repo) => console.log(repo)
-                    // <div key={repo.id}>
-                    //   <p className={`${styles.projectTags}`}>
-                    //     {repo.description}
-                    //   </p>
-                    //   <h3
-                    //     className={`${styles.projectTitle} ${styles.blackText} `}
-                    //     style={{ textTransform: "uppercase" }}
-                    //   >
-                    //     {repo.name}
-                    //   </h3>
-                    //   <a
-                    //     href={repo.url}
-                    //     className={`${styles.underlinedText} ${styles.viewButton} `}
-                    //   >
-                    //     view project
-                    //   </a>
-                    //   <div className={`${styles.projectTechnologies} `}>
-                    //     {!loading ? console.log(language) : <div>No Data</div>}
-                    //   </div>
-                    // </div>
-                  )}
+              {repos.map((repo) => (
+                <div key={repo.id}>
+                  <p className={`${styles.projectTags}`}>{repo.description}</p>
+                  <h3
+                    className={`${styles.projectTitle} ${styles.blackText} `}
+                    style={{ textTransform: "uppercase" }}
+                  >
+                    {repo.name}
+                  </h3>
+                  <a
+                    href={repo.url}
+                    className={`${styles.underlinedText} ${styles.viewButton} `}
+                  >
+                    view project
+                  </a>
+                  <div className={`${styles.projectTechnologies} `}>
+                    {!loading ? console.log(language) : <div>No Data</div>}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
