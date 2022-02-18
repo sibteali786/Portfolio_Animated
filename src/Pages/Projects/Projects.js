@@ -4,7 +4,6 @@ import file from "../../Resources/URL.json";
 export default Projects;
 
 function Projects() {
-  const imgRef = file.imgUrls;
   const username = "sibteali786";
   const password = "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";
   const headers = {
@@ -12,22 +11,21 @@ function Projects() {
   };
   const [repos, setRepos] = useState([]);
   const [language, setLanguage] = useState([]);
-  const [contents, setContents] = useState([]);
+  var [contents, setContents] = useState([]);
   const URL = `https://api.github.com/users/sibteali786/starred`;
-  const [loading, setloading] = useState(false);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => {
-    const FetchURL = async () => {
+  const [loading, setLoading] = useState(true);
+  const FetchURL = async () => {
+    var arr = [];
+    var result = {};
+    var n = 0;
+    try {
+      setLoading(true);
       const res = await fetch(URL, {
         method: "GET",
         headers: headers,
       });
       const data = await res.json();
-      setRepos(data);
-      var result = {};
       //get languages based on repo url
-      const arr = [];
-      var n = 0;
       data.map(async (repo) => {
         const res = await fetch(repo.languages_url, {
           method: "GET",
@@ -40,19 +38,34 @@ function Projects() {
             headers: headers,
           }
         );
-        const data = await res.json();
+        const dataRes = await res.json();
         const dataCont = await resCont.json();
-        result[repo.name] = data;
+        console.log("dataCont", dataCont);
+        result[repo.name] = dataRes;
         dataCont.map((data) => {
-          arr[n] = data.download_url;
+          contents[n] = data.download_url;
+          console.log(contents);
           n = n + 1;
         });
+        contents = contents.sort();
+        // console.log("result", arr);
       });
-      setContents(arr.sort());
+      setRepos(data);
+      console.log("repos", repos);
+      // setContents(arr);
+      console.log("contents", contents);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    } finally {
       setLanguage(result);
-      setloading(false);
-    };
+    }
+  };
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
     FetchURL();
+    console.log("contents", contents);
   }, []);
 
   return (
@@ -66,17 +79,16 @@ function Projects() {
           </h1>
           <div className={`${styles.projectItem}`}>
             <div className={`${styles.projectItemImage}`}>
-              {file.url.map((arr, index) => (
-                <picture>
-                  <source
-                    type="image/png"
-                    data-srcset={arr}
-                    srcSet={arr}
-                    sizes="512px"
-                  />
-                  <img src={contents[index]} alt="Repos" />
-                </picture>
-              ))}
+              {!loading
+                ? file.url.map(
+                    (arr, index) => (
+                      <picture>
+                        <img src={contents[index]} alt="Repos" />
+                      </picture>
+                    )
+                    // console.log(contents[index])
+                  )
+                : console.log("Nothing")}
             </div>
             <div className={`${styles.projectItemText}`}>
               {repos.map((repo) => (
