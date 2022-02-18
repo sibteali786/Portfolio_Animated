@@ -54,11 +54,11 @@ function Projects() {
       console.log("repos", repos);
       // setContents(arr);
       console.log("contents", contents);
-      setLoading(false);
     } catch (error) {
       console.log(error);
     } finally {
       setLanguage(result);
+      setLoading(false);
     }
   };
 
@@ -77,21 +77,15 @@ function Projects() {
           >
             Projects
           </h1>
-          <div className={`${styles.projectItem}`}>
-            <div className={`${styles.projectItemImage}`}>
-              {!loading
-                ? file.url.map(
-                    (arr, index) => (
-                      <picture>
-                        <img src={contents[index]} alt="Repos" />
-                      </picture>
-                    )
-                    // console.log(contents[index])
-                  )
-                : console.log("Nothing")}
-            </div>
-            <div className={`${styles.projectItemText}`}>
-              {repos.map((repo) => (
+          {/*  */}
+          {repos.map((repo, index) => (
+            <div className={`${styles.projectItem}`}>
+              <div className={`${styles.projectItemImage}`}>
+                <picture>
+                  <img src={contents[index]} alt="Repos" />
+                </picture>
+              </div>
+              <div className={`${styles.projectItemText}`}>
                 <div key={repo.id}>
                   <p className={`${styles.projectTags}`}>{repo.description}</p>
                   <h3
@@ -110,9 +104,9 @@ function Projects() {
                     {/* {!loading ? console.log(language) : <div>No Data</div>} */}
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
+          ))}
         </section>
       </main>
     </div>
