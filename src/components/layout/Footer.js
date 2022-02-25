@@ -14,7 +14,7 @@ function Footer() {
   const [isVisible, setisVisible] = useState(false);
   const toggleHover = () => setHovered(!hovered);
   const targetRef = useRef(null);
-  const [scrollPosition, setScrollPosition] = useState(0);
+  var [scrollPosition, setScrollPosition] = useState(0);
   const handleScroll = () => {
     const position = window.scrollY;
     setScrollPosition(position);
@@ -42,7 +42,11 @@ function Footer() {
     }
     if (isVisible) {
       var distance = parseInt(variables.shiftDistance) / 100;
-      distance = (distance + scrollPosition / 100) * 5;
+      console.log(scrollPosition);
+      if (scrollPosition >= 800) {
+        scrollPosition -= 1000;
+        distance = (distance + scrollPosition / 100) * 5;
+      }
       document
         .getElementsByTagName("footer")[0]
         .style.setProperty("--shiftDistance", distance + "%");
