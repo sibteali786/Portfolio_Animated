@@ -15,10 +15,8 @@ function Projects() {
   const URL = `https://api.github.com/users/sibteali786/starred`;
   const [loading, setLoading] = useState(true);
   const FetchURL = useCallback(async () => {
-    var arr = [];
     var result = {};
     var n = 0;
-
     setLoading(true);
     const res = await fetch(URL, {
       method: "GET",
@@ -27,6 +25,7 @@ function Projects() {
     const data = await res.json();
     for (let index = 0; index < data.length; index++) {
       const element = data[index];
+      // eslint-disable-next-line no-loop-func
       // eslint-disable-next-line no-loop-func
       const dataFunc = async (element) => {
         const res = await fetch(element.languages_url, {
@@ -43,29 +42,26 @@ function Projects() {
         const dataRes = await res.json();
         const dataCont = await resCont.json();
         result[element.name] = dataRes;
-        // eslint-disable-next-line array-callback-return
-        dataCont.map((data) => {
-          contents[n] = data.download_url;
+        for (let i = 0; i < dataCont.length; i++) {
+          const element = dataCont[i];
+          contents[n] = element.download_url;
           n = n + 1;
-        });
+        }
         // eslint-disable-next-line react-hooks/exhaustive-deps
         contents = contents.sort();
       };
+      dataFunc(element);
     }
     //get languages based on repo url
     setRepos(data);
-    console.log(contents);
     setLanguage(result);
     setLoading(false);
   }, []);
-  console.log("contents: ", contents);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     FetchURL();
-    console.log(contents);
-    console.log(contents[0]);
   }, [FetchURL]);
-  console.log(contents);
+
   return (
     <div className={`${styles.illuminationTop}  ${styles.illuminationTopLeft}`}>
       <main>
