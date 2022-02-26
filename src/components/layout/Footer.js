@@ -42,9 +42,8 @@ function Footer() {
     }
     if (isVisible) {
       var distance = parseInt(variables.shiftDistance) / 100;
-      console.log(scrollPosition);
-      if (scrollPosition >= 800) {
-        scrollPosition -= 1000;
+      if (scrollPosition >= 2000) {
+        scrollPosition -= 2500;
         distance = (distance + scrollPosition / 100) * 5;
       }
       document

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styles from "../../Sass/components/projects.module.scss";
 import file from "../../Resources/URL.json";
 export default Projects;
@@ -14,25 +14,27 @@ function Projects() {
   var [contents, setContents] = useState([]);
   const URL = `https://api.github.com/users/sibteali786/starred`;
   const [loading, setLoading] = useState(true);
-  const FetchURL = async () => {
+  const FetchURL = useCallback(async () => {
     var arr = [];
     var result = {};
     var n = 0;
-    try {
-      setLoading(true);
-      const res = await fetch(URL, {
-        method: "GET",
-        headers: headers,
-      });
-      const data = await res.json();
-      //get languages based on repo url
-      data.map(async (repo) => {
-        const res = await fetch(repo.languages_url, {
+
+    setLoading(true);
+    const res = await fetch(URL, {
+      method: "GET",
+      headers: headers,
+    });
+    const data = await res.json();
+    for (let index = 0; index < data.length; index++) {
+      const element = data[index];
+      // eslint-disable-next-line no-loop-func
+      const dataFunc = async (element) => {
+        const res = await fetch(element.languages_url, {
           method: "GET",
           headers: headers,
         });
         const resCont = await fetch(
-          repo.contents_url.replace("/{+path}", "/Images"),
+          element.contents_url.replace("/{+path}", "/Images"),
           {
             method: "GET",
             headers: headers,
@@ -40,34 +42,30 @@ function Projects() {
         );
         const dataRes = await res.json();
         const dataCont = await resCont.json();
-        console.log("dataCont", dataCont);
-        result[repo.name] = dataRes;
+        result[element.name] = dataRes;
+        // eslint-disable-next-line array-callback-return
         dataCont.map((data) => {
           contents[n] = data.download_url;
-          console.log(contents);
           n = n + 1;
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         contents = contents.sort();
-        // console.log("result", arr);
-      });
-      setRepos(data);
-      console.log("repos", repos);
-      // setContents(arr);
-      console.log("contents", contents);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLanguage(result);
-      setLoading(false);
+      };
     }
-  };
-
+    //get languages based on repo url
+    setRepos(data);
+    console.log(contents);
+    setLanguage(result);
+    setLoading(false);
+  }, []);
+  console.log("contents: ", contents);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     FetchURL();
-    console.log("contents", contents);
-  }, []);
-
+    console.log(contents);
+    console.log(contents[0]);
+  }, [FetchURL]);
+  console.log(contents);
   return (
     <div className={`${styles.illuminationTop}  ${styles.illuminationTopLeft}`}>
       <main>
@@ -77,36 +75,43 @@ function Projects() {
           >
             Projects
           </h1>
-          {/*  */}
-          {repos.map((repo, index) => (
-            <div className={`${styles.projectItem}`}>
-              <div className={`${styles.projectItemImage}`}>
-                <picture>
-                  <img src={contents[index]} alt="Repos" />
-                </picture>
-              </div>
-              <div className={`${styles.projectItemText}`}>
-                <div key={repo.id}>
-                  <p className={`${styles.projectTags}`}>{repo.description}</p>
-                  <h3
-                    className={`${styles.projectTitle} ${styles.blackText} `}
-                    style={{ textTransform: "uppercase" }}
-                  >
-                    {repo.name}
-                  </h3>
-                  <a
-                    href={repo.url}
-                    className={`${styles.underlinedText} ${styles.viewButton} `}
-                  >
-                    view project
-                  </a>
-                  <div className={`${styles.projectTechnologies} `}>
-                    {/* {!loading ? console.log(language) : <div>No Data</div>} */}
+          {!loading
+            ? repos.map((repo, index) => (
+                <div className={`${styles.projectItem}`}>
+                  <div className={`${styles.projectItemImage}`}>
+                    <picture>
+                      <img
+                        src={contents[index]}
+                        onClick={() => console.log(contents)}
+                        alt="Repos"
+                      />
+                    </picture>
+                  </div>
+                  <div className={`${styles.projectItemText}`}>
+                    <div key={repo.id}>
+                      <p className={`${styles.projectTags}`}>
+                        {repo.description}
+                      </p>
+                      <h3
+                        className={`${styles.projectTitle} ${styles.blackText} `}
+                        style={{ textTransform: "uppercase" }}
+                      >
+                        {repo.name}
+                      </h3>
+                      <a
+                        href={repo.url}
+                        className={`${styles.underlinedText} ${styles.viewButton} `}
+                      >
+                        view project
+                      </a>
+                      <div className={`${styles.projectTechnologies} `}>
+                        {/* {!loading ? console.log(language) : <div>No Data</div>} */}
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              ))
+            : console.log("Display")}
         </section>
       </main>
     </div>
