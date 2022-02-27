@@ -10,7 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --scrollbar-width: 0px;
+  --scrollbar-width: 21px;
 --unit: max(10px,min(calc(0.78125vw - var(--scrollbar-width)*0.00781 + 10px),25px));
   
 }
