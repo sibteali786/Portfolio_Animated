@@ -44,6 +44,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   --scrollbar-width: 21px;
 --unit: max(10px,min(calc(0.78125vw - var(--scrollbar-width)*0.00781 + 10px),25px));
+  font-size: max(21px,1.1rem);
+  font-weight: 300
   
 }
 
@@ -52,10 +54,7 @@ code {
     monospace;
 }
 
-main{
-  margin-left: auto;
-  margin-right: auto;
-}
+
 
 .title{
     font-weight: 400;
@@ -79,14 +78,50 @@ main{
   }
 }
 
-.text-gradient {
+
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.mail-to-us-button, .text-gradient {
   -webkit-background-clip: text;
   background-clip: text;
   background-image: var(--text-gradient);
   color: transparent;
 }
 
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+.mail-to-us-button {
+  color: transparent;
+  line-height: 1.4;
+  margin-top: 0.5rem;
+}
+
+.underlined-text {
+  color: var(--white-color);
+  display: inline-block;
+  position: relative;
+}
+
+
+.underlined-text:hover:after{
+  width:100%;
+}
+
+.underlined-text:after{
+  background-image: var(--text-gradient);
+    bottom: -0.5rem;
+    content: "";
+    display: block;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    transition: width .25s ease-in-out;
+    width: 50%;
+}
+
+a{
+  background-color: transparent;
+  text-decoration: none;
 }

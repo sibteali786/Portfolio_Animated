@@ -93,6 +93,12 @@ $unit: MAX(10px,MIN(calc(0.78125vw -#{$scrollbar-width}*0.00781 + 10px),25px));
         --width-units-count: 38;
         width: calc(var(--width-units-count)*var(--unit));
     }
+
+    @media (min-width: 1279px)
+    {
+        --width-units-count: 42;
+        width: calc(var(--width-units-count)*var(--unit));
+    }
     .imageContainer{
         display: block;
         font-size: 0;
@@ -208,8 +214,8 @@ $unit: MAX(10px,MIN(calc(0.78125vw -#{$scrollbar-width}*0.00781 + 10px),25px));
 }
 
 .blackText{
-    font-size: max(1.25rem,1.5rem);
-    font-weight: 400;
+    font-size:MAX(25px,2rem);
+    font-weight: 600;
 }
 
 .underlinedText{
